@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Game{% endblock %}
+
+{% block body %}
+    <div class="card-home">
+
+        <h1>Kortlek <span>&#{{ cardString }}</span></h1>
+
+        <ul class="game-links">
+            <li><a href="{{ path('card_init', {route: 'card_deck'}) }}">Sorted cards</a></li>
+            <li><a href="{{ path('card_init',{route: 'card_deck_shuffle'}) }}">Mixed cards</a></li>
+            <li><a href="{{ path('card_deck_draw') }}">Draw a card from the deck</a></li>
+            <li><a href="{{ path('card_deck_draw_num', {num: 5}) }}">Draw a number of cards from the deck</a></li>
+        </ul>
+
+        <h2>Classes</h2>
+        <div>
+        <p>
+            For the deck, I've created four classes: Card, CardGraphic, CardCollection, and DeckOfCards.
+            UML shows the properties and methods of each class and their relationship to each other.
+            The Card class contains one protected property (cf. value) and three public properties (cf. suites, minValue, maxValue).
+            Furthermore, the Card class contains four public methods.
+            The CardGraphic class "extends" the Card class and inherits all its properties and methods.
+            This class also contains a protected property (cf. representation) that contains the graphical representations of the cards.
+        </p>
+        <p>
+            The CardCollection class contains a protected property (cf. cards) and eight public methods.
+             Note that CardCollection refers to the Card class.
+             There is a compositional relationship between these two classes.
+             In the add() and remove() methods, a Card object is passed as an argument.
+             Following the teachers' advice, I tried to keep the connection between the classes as loose as possible.
+        </p>
+        <iframe frameborder="0" style="margin: 20px auto; width:100%; height:532px;" src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=UML_Kortlek.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1qIo7t2LJX73xQ3oK5V8UwLoNorSZuz_B%26export%3Ddownload"></iframe>
+        </div>
+    </div>
+
+{% endblock %}

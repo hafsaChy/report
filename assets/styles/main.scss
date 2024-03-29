@@ -1,0 +1,50 @@
+/** main.css */
+
+ body {
+    background-color: #eee;
+    margin: 0 auto;
+    background-color: lightgray;
+    
+}
+
+.main {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.article {
+    overflow: auto;
+    background: #fff;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.article h1 {
+    font-size: 2em;
+    border-bottom: 4px double #ccc;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.aside {
+    background-color: #fff;
+    border-right: 1px solid #ccc;
+    padding: 2rem 1em 0 1em; /* top right bottom left */
+}
+
+.aside h4 {
+    border-bottom: 1px solid #ccc;
+}
+
+.lucky {
+    margin-left: 3rem;
+    padding: 3rem 5rem 0 3rem;
+}
+
+.img-me {
+    border:1px solid #f5f3f3;
+    display:block;
+    margin:20px auto;
+    max-width:30%;
+    padding:1rem
+}

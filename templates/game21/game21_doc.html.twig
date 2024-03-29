@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Game21{% endblock %}
+
+{% block body %}
+    <div class="card-home">
+        <h1>Documentation</h1>
+
+        <h2>Classes</h2>
+        <div>
+        <p>
+            Think through what classes you need to implement the game. Describe the classes in text with the name of the class and a sentence that describes what the purpose of the class is. Keep it short and simple.    </p>
+
+        <h2>Flow chart</h2>
+        <div>
+        <p>
+            Create a flowchart that represents how you intend to solve the basics of the game. You can place the result as an image in the web page for the documentation. It doesn't have to be a complete solution, a partial solution is fine.    </p>
+        </div>
+        <iframe frameborder="0" style="width:100%;height:655px;" src="https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&page-id=jzGJfJnaShjbMTXZ_vHA&title=UML_Kortlek.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1qIo7t2LJX73xQ3oK5V8UwLoNorSZuz_B%26export%3Ddownload"></iframe>
+        </div>
+
+        <h2>Pseudo code</h2>
+        <div>
+        <p>
+            Create psuedo code that shows how you intend to solve parts of the game. You can save the result as text or image but display it in the documentation web page. It doesn't have to be a complete solution, a partial solution is fine.    </p>
+        </div>
+
+        <a href="{{ path('game_home') }}">Back to game landing page</a>
+    </div>
+{% endblock %}

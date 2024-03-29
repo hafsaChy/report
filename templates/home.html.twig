@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<div class="two-col-layout">
+    <main class="main">
+        <article class="article">
+
+        <h1>Home</h1>
+        <p> I am Hafsa Choudhry, born and raised in Bangladesh. I live in Stockholm with my husband and my two daughters. I love to play badminton.</p>
+
+        <p>Mathematics is my favorite subject since my childhood. So I did my bachelor's and master's degrees in mathematics. During my bachelor's studies, I had some courses in computer science. My interest in computer science started at that time. I have started studying web programming at BTH with the dream of becoming a web programmer.</p>
+        <img src="{{ asset('img/me.jpeg') }}" alt="me" class="img-me">
+        </article>
+    </main>
+
+    <aside class="aside">
+        <h2> About Hafsa</h2>
+        <p> <b>Name :</b> Hafsa Choudhury</p>
+        <p> <b>City :</b> Stockholm</p>
+        <p> <b>Hobby :</b> Gardening</p>
+    </aside>
+</div>
+{% endblock %}

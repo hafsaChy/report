@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% block title %}API{% endblock %}
+
+{% block body %}
+    <div class="card-home">
+
+        <h1>API</h1>
+        <p>This site offers the following lists in JSON form.</p>
+        <div>
+            <h2>Today's quote</h2>
+            <p>This route takes you to a page that displays a JSON object with today's quote.</p>
+            <form action="{{ path('quote') }}" method="get">
+                <button class="button blue-button" type="submit">Today's quote</button>
+            </form>
+        </div>
+
+        <div>
+            <h2>Sorted deck</h2>
+            <p>This route takes you to a page that displays a JSON object with all the cards in the deck sorted by suit and value.</p>
+            <form action="{{ path('api_deck_init') }}" method="get">
+                <button class="button blue-button" type="submit">Sorted deck</button>
+            </form>
+        </div>
+
+        <div>
+            <h2>Mixed deck</h2>
+            <p>This route takes you to a page that displays a JSON object with all the cards in the deck once it has been shuffled.</p>
+            <form action="{{ path('api_deck_shuffle_post') }}" method="post">
+                <button class="button blue-button" type="submit">Mixed deck</button>
+            </form>
+        </div>
+
+        <div>
+            <h2>Draw a card from the deck</h2>
+            <p>
+                This route takes you to a page that displays a JSON object with a random card from the deck. The number of cards remaining in the deck is also displayed.
+            </p>
+            <form action="{{ path('api_deck_draw_post') }}" method="post">
+                <button class="button blue-button" type="submit">Draw a card from the deck</button>
+            </form>
+        </div>
+
+        <div>
+            <h2>Draw a number of cards from the deck</h2>
+            <p>
+               This route takes you to a page that displays a JSON object with a number of cards from the deck. The number of cards remaining in the deck is also displayed.
+            </p>
+            <form action="{{ path('api_deck_draw_num_post', {num: 5}) }}" method="post">
+                <button class="button blue-button" type="submit">Draw a number of cards from the deck</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
