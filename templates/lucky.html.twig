@@ -7,7 +7,9 @@
         <h1>Lucky bird</h1>
         <p>Welcome to the lucky bird page.</p>
         <p>Your lucky bird is: {{ bird }}</p> 
-        <p><img src="img/{{ img_bird }}" height= "420" width= "640" alt="{{ img_bird }}" class ="center">
+        <p><img src="{{ asset('img/' ~ img_bird) }}" height="420" width="640" alt="{{ bird }}" class="center"></p>
+
+        {# <p><img src="img/{{ img_bird }}" height= "420" width= "640" alt="{{ img_bird }}" class ="center"> #}
         </p>
     </main>
 {% endblock %}
