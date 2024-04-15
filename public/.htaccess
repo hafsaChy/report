@@ -1,20 +1,37 @@
-#
-# This is a modified rewrite to fit when working on both local development
-# environment and publishing to www.student.bth.se.
-#
-# Do NOT forget to change /~mosstud/ to your own student acronym.
-#
-RewriteEngine on
+# #
+# # This is a modified rewrite to fit when working on both local development
+# # environment and publishing to www.student.bth.se.
+# #
+# # Do NOT forget to change /~mosstud/ to your own student acronym.
+# #
+# RewriteEngine on
 
-# Igore real files (images, stylesheets etc.)
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule (.*) - [NC,L]
+# # Igore real files (images, stylesheets etc.)
+# RewriteCond %{REQUEST_FILENAME} -f [OR]
+# RewriteCond %{REQUEST_FILENAME} -d
+# RewriteRule (.*) - [NC,L]
 
-# Rewrite 1 - For request via www.student.bth.se
-RewriteCond %{HTTP_HOST} ^www\.student\.bth\.se$ [NC]
-RewriteRule (.*) /~haco22/dbwebb-kurser/mvc/me/kmom01/symfony/app/public/index.php/$1 [NC,L]
+# # Rewrite 1 - For request via www.student.bth.se
+# RewriteCond %{HTTP_HOST} ^www\.student\.bth\.se$ [NC]
+# # RewriteRule (.*) /~mosstud/dbwebb-kurser/mvc/me/kmom01/symfony/app/public/index.php/$1 [NC,L]
+# RewriteRule (.*) /~haco22/dbwebb-kurser/mvc/me/kmom01/symfony/app/public/index.php/$1 [NC,L]
 
-# Rewrite 2 - For other requests
-RewriteCond %{HTTP_HOST} !^www\.student\.bth\.se$ [NC]
-RewriteRule (.*) index.php/$1 [NC,L]
+# # Rewrite 2 - For other requests
+# RewriteCond %{HTTP_HOST} !^www\.student\.bth\.se$ [NC]
+# RewriteRule (.*) index.php/$1 [NC,L]
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /~haco22/dbwebb-kurser/mvc/me/report/public/
+
+    # Ignore real files (images, stylesheets etc.)
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule (.*) - [NC,L]
+
+    # Rewrite for the home page
+    RewriteRule ^$ index.php [L]
+
+    # Rewrite for other pages (including the about page)
+    RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
