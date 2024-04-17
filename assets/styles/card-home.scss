@@ -1,7 +1,22 @@
 .card-home {
-    padding: 20px;
+    padding: 40px;
 }
 
 .card-home .card {
     font-size: 30px;
 }
+
+.card-container {
+    display: flex; /* Use flexbox to align items horizontally */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if there's not enough space */
+}
+
+.card {
+    margin-right: 10px; /* Add spacing between cards */
+}
+
+.card-front-page {
+    background-color: aliceblue;
+    padding: 100px;
+}
+

@@ -131,14 +131,15 @@ class JsonApiController extends AbstractController
         SessionInterface $session
     ): Response {
 
-        $num = (int) $request->request->get('num_cards');
+        $num = (int) $request->request->get('num');
 
         $deck = $session->get("deck");
 
         // Draw random cards
         if (!$num) {
-            $num = 2;
+            $num = 1; // check this again
         }
+
 
         if ($deck instanceof DeckOfCards) {
             $deckSize = $deck->getCount();
@@ -181,15 +182,8 @@ class JsonApiController extends AbstractController
         }
 
         if ($drawnCards instanceof CardCollection) {
-            // var_dump($drawnCards);
-
-            // if (count($drawnCards) === 1) {
-            //     $data["CardDrawn"] = $drawnCards[0]->getAsString();
-            //     $data["CardsColor"] = $drawnCards[0]->getColor();
-            // } else {
             $data["CardsDrawn"] = $drawnCards->getStrings();
             $data["CardsColor"] = $drawnCards->getColors();
-            // }
         }
 
         $response = new JsonResponse($data);

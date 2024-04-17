@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Session Data{% endblock %}
+
+{% block body %}
+    <main class="lucky">
+        <h1>Session Data</h1>
+        <pre>{{ dump(sessionData) }}</pre>
+        <br>
+        <h1>Remove session </h1>
+        <p>Remove session <a href="{{ path('session_delete', {route: 'session_delete'}) }}">here.</a></li>
+</p>
+
+    </main>
+{% endblock %}

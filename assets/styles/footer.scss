@@ -2,8 +2,10 @@
 .footer {
     color: #FFF;
     padding: 0.5em 1em;
-    position: relative;
+    // position: relative;
+    position: fixed;
     height: 3rem;
-    width: cover;
+    width: 100%;
     background-color: #333333;
+    bottom: 0;
 }

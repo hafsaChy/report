@@ -1,0 +1,13 @@
+/* Flash message styling */
+.flash-message {
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    animation: fadeOut 10s forwards; /* Animation to fade out after 5 seconds */
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
