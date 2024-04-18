@@ -21,12 +21,31 @@
     </aside>
     <main class="main">
         <article class="article">
+            <br>
             <h2 id="kmom01">Kmom01 </h2>
                 <p>Objektorienterad programmering eller OOPs hänvisar till språk som använder objekt i programmering. Jag har erfarenhet av att arbeta med objektorienterad programmering i python. De två huvudaspekterna av OOP är klasser och objekt. Medan klassen är ritningen, är en instans av en klass ett objekt. Klasser används för att skapa användardefinierade datastrukturer. Varje klass har en konstruktör. En konstruktor låter oss initiera ett objekts egenskaper när objektet skapas. Klassen har också attribut och metoder. Ett attribut definierar en viss egenskap hos ett objekt, element eller fil. Funktioner som definieras i klass kallas metoder.</p>
                 <p>I PHP definieras klass genom att använda nyckelordet <i>class</i>, följt av klassens namn och ett par måsvingar ( <i>{}</i> ). Alla dess properties och metoder går in i måsvingarna. Klassnamn måste deklareras i <i>StudlyCaps</i> och metodnamn måste deklareras i <i>camelCase</i>. Syntaxen för att definiera konstruktorn är funktionen <i>__construct()</i>. <i>Namespaces</i> används för att undvika kollisionen med andra klasser med samma namn. Jag har skrivit php-koden för att skapa rutter i src/controller-mappen. Alla template filer som ska renderas sparas i templates mappen. Templatemotorn <i>twig</i> användas här.</p>
                 <p>Jag hittade alla kapitlen i artikeln "PHP The Right Way" är viktiga. Men jag vill veta mer om <i>Coding Practices, Databases, Testing</i> och <i>Templating</i> i den här artikeln. Att definiera klass i PHP, skapa rutter är min TIL i denna kmom.</p>
+            <br>            
             <h2 id="kmom02">Kmom02</h2>
-            <p>Kmom02</p>
+                <p>Detta kursmoment lärde vi oss om de objektorienterade konstruktionerna arv, komposition, interface och trait.</p>
+                <p><b>Arv </b> är en relation mellan två klasser. Det tillåter klasser att ärva egenskaper och metoder från andra klasser. Detta koncept främjar kodåteranvändbarhet och underlättar skapandet av en hierarkisk klassstruktur. Nyckelordet "extends" används för att implimentera arv i PHP.</p>
+                <p><b> Komposition </b> är en annan typ av relation mellan klasser där en klass innehåller objekt från andra klasser som medlemsvariabler. I komposition finns det huvudsakligen två typer av kopplingar: tät koppling och lös koppling. Tät koppling innebär starka beroenden mellan delar av koden, vilket gör att ändringar i en del sannolikt påverkar andra. Lös koppling, å andra sidan, indikerar mindre beroende mellan koddelar, vilket gör det lättare att modifiera och underhålla dem oberoende.</p>
+                <p>Ett <b> interface </b> definierar ett kontrakt för klasser, som specificerar en uppsättning metoder som en klass måste implementera. Det fungerar som en ritning för att definiera beteendet hos objekt utan att specificera deras interna implementeringsdetaljer. Nyckelordet "interface" används för att implimentera interfce i PHP.</p>
+                <p>Ett <b>trait </b> är en mekanism för kodåteranvändning som gör det möjligt för utvecklare att dela metoder mellan klasser utan att använda arv. I PHP definieras ett trait med nyckelordet "trait" och ingår i en klass med nyckelordet "use".</p>
+                <p>
+                Jag skapade fyra klasser (Card, CardGraphic, CardHand och DeckOfCards) för att göra uppgiften i denna kmom. Klassen <b>Card </b>representerar ett spelkort. Den har en protected property (value), tre public properties (suites, minValue och maxValue) och en konstruktor som slumpmässigt tilldelar kortet en färg och ett värde om inget anges. Den har metoder för att dra ett nytt kort, hämta kortets värde, hämta en strängrepresentation av kortet och även hämta kortets färg.
+                <p>
+                Klassen <b>CardGraphic</b> ärver från klassen "Card" och har ytterligare en privat egenskap (representation) som mappar varje möjligt kortvärde till en motsvarande Unicode-teckenrepresentation av kortets färg och nummer. Det finns en metod, getAsString(), som returnerar en Unicode-teckenrepresentation av kortets färg och nummer.
+                </p>
+                <p>
+                Klassen <b>CardHand</b> representerar en korthand, med metoder för att lägga till och ta bort kort, blanda samlingen, få fram antalet kort, få fram värden, färger och strängar för korten och slumpmässigt dra ett visst antal kort från samlingen. </p>
+                </p>
+                <p>
+                Klassen <b>DeckOfCards</b> ärver från klassen "CardHand" och representerar en komplett kortlek. Den har en metod, isCompleteDeck(), som kontrollerar om kortleken har alla 52 kort. Metoden beräknar det förväntade antalet kort baserat på kortets min- och maxvärden och jämför det med det faktiska antalet kort i kortleken.
+                </p>
+
+                <p> Jag är bekant med Objektorienterad programmering då jag arbetade med objektorienterad Python i min tidigare kurs. Men att implementera OOP i PHP är nytt för mig och min TIL också i denna kmom.</p> 
             <h2 id="kmom03">Kmom03</h2>
             <p>Kmom03</p>
             <h2 id="kmom04">Kmom04</h2>

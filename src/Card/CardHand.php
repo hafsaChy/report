@@ -4,7 +4,7 @@ namespace App\Card;
 
 use App\Card\Card;
 
-class CardCollection
+class CardHand
 {
     /**
      * @var array<Card> $cards
@@ -23,19 +23,15 @@ class CardCollection
 
     public function remove(Card $card): void
     {
-        // Find the index of the Card object
         $index = array_search($card, $this->cards);
-        // Remove the Card object
         if ($index) {
             unset($this->cards[$index]);
-            // Reindex array?
-            // $this->cards = array_values($this->cards);
         }
     }
 
     public function shuffle(): void
     {
-        // Change the order of the cards array
+        // Shuffle the cards array
         shuffle($this->cards);
     }
 

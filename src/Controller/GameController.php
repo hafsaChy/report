@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Card\Card;
 use App\Card\CardGraphic;
-use App\Card\CardCollection;
+use App\Card\CardHand;
 use App\Card\DeckOfCards;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -126,13 +126,12 @@ class GameController extends AbstractController
             "cardColors" => []
         ];
 
-        // Draw random cards
         if ($deck instanceof DeckOfCards) {
             if ($deck->getCount() < $num) {
                 return $this->redirect('/card/init/card_deck_draw_num');
             }
 
-            $randomCards = new CardCollection();
+            $randomCards = new CardHand();
             $randomCardsFromDeck = $deck->draw($num);
 
             foreach ($randomCardsFromDeck as $randCard) {

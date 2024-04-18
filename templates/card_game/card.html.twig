@@ -16,7 +16,7 @@
 
             <h2>Classes</h2>
             <p>
-                For the deck, I've created four classes: Card, CardGraphic, CardCollection, and DeckOfCards.
+                For the deck, I've created four classes: Card, CardGraphic, CardHand, and DeckOfCards.
                 UML shows the properties and methods of each class and their relationship to each other.
                 The Card class contains one protected property (value) and three public properties (suites, minValue, maxValue).
                 Furthermore, the Card class contains four public methods.
@@ -24,11 +24,12 @@
                 This class also contains a protected property (representation) that contains the graphical representations of the cards.
             </p>
             <p>
-                The CardCollection class contains a protected property (cards) and eight public methods.
-                Note that CardCollection refers to the Card class.
-                There is a compositional relationship between these two classes.
-                In the add() and remove() methods, a Card object is passed as an argument.
+                The CardHand class contains a protected property (cards) and eight public methods. In the add() and remove() methods, a Card object is passed as an argument.
+                There is a compositional relationship between the classes Card and CardHand. The DeckOfCards class "extends" the CardHand class and inherits all its properties and methods.
+                The UML class diagram is shown below.
             </p>
+            {# <iframe src="https://drive.google.com/file/d/173hbnR_Pn-__EGs5TYow4r7qd-aZJZhy/view?usp=sharing" height="420" width="640" alt="class_diagram" class="center"></iframe> #}
+
             <img src="{{ asset('img/class_diagram.png') }}" height="420" width="640" alt="class_diagram" class="center">
     </div>
 

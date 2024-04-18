@@ -78,7 +78,6 @@ class Card
      */
     public function draw()
     {
-        // Generate a new random suite and number
         $randSuites = array_rand($this->suites, 1);
         $number = random_int($this->minValue, $this->maxValue);
 

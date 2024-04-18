@@ -2,9 +2,9 @@
 
 namespace App\Card;
 
-use App\Card\CardCollection;
+use App\Card\CardHand;
 
-class DeckOfCards extends CardCollection
+class DeckOfCards extends CardHand
 {
     public function __construct()
     {

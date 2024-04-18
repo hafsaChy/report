@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Card\Card;
-use App\Card\CardCollection;
+use App\Card\CardHand;
 use App\Card\DeckOfCards;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -112,7 +112,7 @@ class JsonApiController extends AbstractController
             $deckSize = $deck->getCount();
 
             if ($deckSize >= 1) {
-                $randomCards = new CardCollection();
+                $randomCards = new CardHand();
                 $randomCard = $deck->draw();
                 $randomCards->add($randomCard[0]);
 
@@ -145,7 +145,7 @@ class JsonApiController extends AbstractController
             $deckSize = $deck->getCount();
 
             if ($deckSize >= $num) {
-                $randomCards = new CardCollection();
+                $randomCards = new Cardhand();
                 $randomCardsFromDeck = $deck->draw($num);
 
                 foreach ($randomCardsFromDeck as $randCard) {
@@ -181,7 +181,7 @@ class JsonApiController extends AbstractController
             ];
         }
 
-        if ($drawnCards instanceof CardCollection) {
+        if ($drawnCards instanceof CardHand) {
             $data["CardsDrawn"] = $drawnCards->getStrings();
             $data["CardsColor"] = $drawnCards->getColors();
         }
