@@ -3,27 +3,87 @@
 {% block title %}Game21{% endblock %}
 
 {% block body %}
-    <div class="card-home">
+    <div class="card-home" style="padding: 100px;">
         <h1>Documentation</h1>
-
+        <p>The documentation for developing Game21 is available here. </p>
         <h2>Classes</h2>
         <div>
+        <p>Three classes are created for this game where the classes either inherit from or use the classes created for the simple <a class="link" href="{{ path('card_home') }}">card game in kmom02</a> .
+        To represent the players in the game, the classes Player and Bank are created.
+        The Player class represents a player in the Twenty One game.
+        It has properties for the player's name and their current hand (represented as a CardHand object).
+        The class has methods to add a new card to the hand, retrieve the hand as an array of strings, retrieve the hand's values, suits, and counts.
+        The Bank class inherits from the Player class.
+        The only difference between the two classes is that Bank has the default name "bank", while a name must be specified when initializing a new Player.
+        </p>
+        <p>A class Game21 is created to represent the game.
+         This class has methods for adding players to the game, adding decks, drawing new cards, and calculating a player's total hand.
+         It also has methods to retrieve the current and next player in the queue and to retrieve the current player's hand as an array.
+         The class makes use of the Player and DeckOfCards classes.
+         A UML diagram for the classes mentioned above is given below which was created before coding.
+        </p>
         <p>
-            Think through what classes you need to implement the game. Describe the classes in text with the name of the class and a sentence that describes what the purpose of the class is. Keep it short and simple.    </p>
-
+        <img src="{{ asset('img/uml_game21.png') }}" height="420" width="640" alt="uml_game21" class="center">
+        </p>
+        <br>
         <h2>Flow chart</h2>
         <div>
         <p>
-            Create a flowchart that represents how you intend to solve the basics of the game. You can place the result as an image in the web page for the documentation. It doesn't have to be a complete solution, a partial solution is fine.    </p>
+            A flowchart that represents how I intend to solve the basics of the game is given below.</p>
+            <p>
+            <img src="{{ asset('img/flowchartGame21.png') }}" height="420" width="640" alt="flowchartGame21" class="center">
+            </p>
         </div>
         </div>
-
+        <br>
         <h2>Pseudo code</h2>
         <div>
         <p>
-            Create psuedo code that shows how you intend to solve parts of the game. You can save the result as text or image but display it in the documentation web page. It doesn't have to be a complete solution, a partial solution is fine.    </p>
-        </div>
+            A pseudocode of how I thought of checking who won the game is given below. Using this pseudocode, I created the <code>checkWinStatus</code> method in the Game21 class.
+        </p>
+        <pre class="code-block">
+            <b>Game21->checkWinStatus</b>
+                Initialize an empty array called "report"
+                Initialize two empty arrays called "winners" and "losers"
+
+                For each player in the queue:
+                    If the player has hand cards:
+                        Add an entry to "report" with player's name as key and hand total as value
+
+                For each entry in "report":
+                If the value is less than or equal to 21:
+                    Add the key to "winners"
+                Otherwise:
+                    Add the key to "losers"
+
+                If the count of "winners" is greater than 1:
+                    Initialize an empty array called "diff"
+                    For each entry in "report":
+                        Calculate the difference between 21 and the value and store it in "diff"
+                    Sort "diff" in ascending order
+                        Get the keys of "diff" and store them in "ranked"
+                        Set "winners" to contain the first key of "ranked"
+                        Set "losers" to contain the second key of "ranked"
+                If the count of "diff" is not equal to the count of unique values in "diff":
+                    Set "winners" to contain "bank"
+                    Remove "bank" from "diff"
+                    Set "losers" to contain the remaining keys of "diff"
+
+                If the count of "winners" is 0:
+                    Set "winners" to contain an empty string
+                If the count of "losers" is greater than 0:
+                    Set "winners" to contain "bank"
+
+                If the count of "losers" is 0:
+                Set "losers" to contain an empty string
+
+                Return a dictionary with keys "winner" and "loser" containing the first elements of "winners" and "losers" respectively
+
+    </div>      
+    <div>
 
         <a href="{{ path('game_home') }}">Back to game landing page</a>
+        <br>
+        <br>
     </div>
 {% endblock %}
