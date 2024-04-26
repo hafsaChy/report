@@ -1,0 +1,64 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Game21{% endblock %}
+
+{% block body %}
+    <div class="flex-row spread" style="display: flex; flex-direction: row; justify-content: space-between; margin: 2em">
+        <h1>Twenty One</h1>
+        <div>
+            <a class="button blue-button" href="{{ path('game_init') }}">Restart</a>
+            <a class="button" href="{{ path('game_home') }}">&#10005;</a>
+        </div>
+    </div>
+
+    {% if loser == "bank" %}
+    <div class="message-box success">
+    <p>Congratulations! you won the game.</p>
+    </div>
+    {% elseif winner == "bank" %}
+    <div class="message-box warning">
+    <p>The bank won. Good luck for next time.</p>
+    </div>
+    {% else %}
+    <div class="message-box info">
+    <p>{{currentPlayer}} is playing...</p>
+    </div>
+    {% endif %}
+
+    <div class="cols-2 flex-center">
+        <div>
+            <h3>Your total number: {{playerCardTotal}}</h3>
+            <div class="">
+            {% for string, colorValues in playerCards %}
+            <span title="{{colorValues[1]}}" style="font-size: 100px; color: {{colorValues[0]}}">&#{{string}}</span>
+            {% endfor %}
+            </div>
+
+            <form method="post" action="">
+                <p>
+                    {% if currentPlayer != "bank" and playerCards|length < 2 %}
+                    <input class="button blue-button" type="submit" name="draw"
+                        value="Draw a card"
+                        onClick="this.form.action='{{ path('game_draw_card') }}';"
+                    >
+                    {% endif %}
+                    {% if playerCards|length > 0 and not loser %}
+                    <input class="button blue-button" type="submit" name="endRound"
+                        value="End turn"
+                        onClick="this.form.action='{{ path('game_bank') }}';"
+                    >
+                    {% endif %}
+                </p>
+            </form>
+        </div>
+
+        <div>
+            <h3>Bank's total number: {{bankCardTotal}}</h3>
+            <div class="">
+            {% for string, colorValues in bankCards %}
+            <span title="{{colorValues[1]}}" style="font-size: 100px; color: {{colorValues[0]}}">&#{{string}}</span>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
