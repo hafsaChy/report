@@ -7,31 +7,31 @@
 
         <h1>API</h1>
         <p>This site offers the following lists in JSON form.</p>
-        <div>
+        <div class="api">
             <h2>Today's quote</h2>
             <p>This route takes you to a page that displays a JSON object with today's quote.</p>
             <form action="{{ path('quote') }}" method="get">
                 <button class="button blue-button" type="submit">Today's quote</button>
             </form>
         </div>
-
-        <div>
+        <br>
+        <div class="api">
             <h2>Sorted deck</h2>
             <p>This route takes you to a page that displays a JSON object with all the cards in the deck sorted by suit and value.</p>
             <form action="{{ path('api_deck_init') }}" method="get">
                 <button class="button blue-button" type="submit">Sorted deck</button>
             </form>
         </div>
-
-        <div>
+        <br>
+        <div class="api">
             <h2>Mixed deck</h2>
             <p>This route takes you to a page that displays a JSON object with all the cards in the deck once it has been shuffled.</p>
             <form action="{{ path('api_deck_shuffle_post') }}" method="post">
                 <button class="button blue-button" type="submit">Mixed deck</button>
             </form>
         </div>
-
-        <div>
+        <br>
+        <div class="api">
             <h2>Draw a card from the deck</h2>
             <p>
                 This route takes you to a page that displays a JSON object with a random card from the deck. The number of cards remaining in the deck is also displayed.
@@ -40,8 +40,8 @@
                 <button class="button blue-button" type="submit">Draw a card from the deck</button>
             </form>
         </div>
-
-        <div>
+        <br>
+        <div class="api">
             <h2>Draw a number of cards from the deck</h2>
             <p>
                This route takes you to a page that displays a JSON object with a number of cards from the deck. The number of cards remaining in the deck is also displayed.
@@ -53,9 +53,17 @@
                 <input type="number" id="num" name="num" min="1" required>
                 <button class="button blue-button" type="submit">Draw</button>
             </form>
-            {# <form action="{{ path('api_deck_draw_num_post', {num: 1}) }}" method="post">
-                <button class="button blue-button" type="submit">Draw a number of cards from the deck</button>
-            </form> #}
         </div>
+        <br>
+        <div class="api">
+            <h2>Check the current setting for the game</h2>
+            <p>
+                This route takes you to a page that displays a JSON object with the current settings for the game Twenty One.
+            </p>
+            <form action="{{ path('api_game21') }}" method="post">
+                <button class="button blue-button" type="submit">Current settings for Twenty One</button>
+            </form>
+        </div>
+        <br>
     </div>
 {% endblock %}

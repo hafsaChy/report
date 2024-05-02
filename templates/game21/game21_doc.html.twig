@@ -8,7 +8,7 @@
         <p>The documentation for developing Game21 is available here. </p>
         <h2>Classes</h2>
         <div>
-        <p>Three classes are created for this game where the classes either inherit from or use the classes created for the simple <a class="link" href="{{ path('card_home') }}">card game in kmom02</a> .
+        <p>Three classes are created for this game where the classes either inherit from or use the classes created for the <a class="link" href="{{ path('card_home') }}">card game in kmom02</a> .
         To represent the players in the game, the classes Player and Bank are created.
         The Player class represents a player in the Twenty One game.
         It has properties for the player's name and their current hand (represented as a CardHand object).
@@ -57,17 +57,17 @@
                     Add the key to "losers"
 
                 If the count of "winners" is greater than 1:
-                    Initialize an empty array called "diff"
+                    Initialize an empty array called "diffTo21"
                     For each entry in "report":
-                        Calculate the difference between 21 and the value and store it in "diff"
-                    Sort "diff" in ascending order
-                        Get the keys of "diff" and store them in "ranked"
+                        Calculate the difference between 21 and the value and store it in "diffTo21"
+                    Sort "diffTo21" in ascending order
+                        Get the keys of "diffTo21" and store them in "ranked"
                         Set "winners" to contain the first key of "ranked"
                         Set "losers" to contain the second key of "ranked"
-                If the count of "diff" is not equal to the count of unique values in "diff":
+                If the count of "diffTo21" is not equal to the count of unique values in "diffTo21":
                     Set "winners" to contain "bank"
-                    Remove "bank" from "diff"
-                    Set "losers" to contain the remaining keys of "diff"
+                    Remove "bank" from "diffTo21"
+                    Set "losers" to contain the remaining keys of "diffTo21"
 
                 If the count of "winners" is 0:
                     Set "winners" to contain an empty string
