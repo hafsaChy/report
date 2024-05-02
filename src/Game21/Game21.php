@@ -182,7 +182,6 @@ class Game21
      * Method that checks the winStatus of the game.
      * @return array<string, string>
      */
-
     public function checkWinStatus(){
         $report = [];
         $winners = [];
@@ -206,20 +205,20 @@ class Game21
         }
 
         if (count($winners) > 1) {
-            $diff = [];
+            $diffTo21 = [];
             foreach ($report as $key=>$value) {
-                $diff[$key] = 21 - $value;
+                $diffTo21[$key] = 21 - $value;
             }
 
-            asort($diff);
-            $ranked = array_keys($diff);
-            $winners = [$ranked[0]];
-            $losers = [$ranked[1]];
+            asort($diffTo21);
+            $status = array_keys($diffTo21);
+            $winners = [$status[0]];
+            $losers = [$status[1]];
 
-            if (count($diff) != count(array_unique($diff))) {
+            if (count($diffTo21) != count(array_unique($diffTo21))) {
                 $winners = ["bank"];
-                unset($diff["bank"]);
-                $losers = array_keys($diff);
+                unset($diffTo21["bank"]);
+                $losers = array_keys($diffTo21);
             }
         }
 
