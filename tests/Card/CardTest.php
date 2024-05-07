@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 class CardTest extends TestCase
 {
     /**
-     * Construct object with no arguments to check if the default values are set correctly.
+     * Construct object with no arguments and verify if the default values are set correctly.
      */
     public function testCreateObjectWithNoArguments(): void
     {
@@ -25,7 +25,7 @@ class CardTest extends TestCase
     }
 
     /**
-     * Construct object with arguments to check if the default values are set correctly.
+     * Construct object with arguments and verify if the default values are set correctly.
      */
     public function testCreateObjectWithArguments(): void
     {
@@ -45,7 +45,7 @@ class CardTest extends TestCase
     }
 
     /**
-     * Test getValue() method to check if the output is an array of strings.
+     * Test getValue() method and verify if the output is an array of strings.
      */
     public function testMethodReturningCardValue(): void
     {
@@ -82,7 +82,7 @@ class CardTest extends TestCase
     }
 
     /**
-     * Test getAsString() method to check if the output is a string.
+     * Test getAsString() method and verify if the output is a string.
      */
     public function testGetAsString(): void
     {
@@ -97,7 +97,7 @@ class CardTest extends TestCase
     }
 
     /**
-     * Test getColor() method to check if the output is a string.
+     * Test getColor() method and verify if the output is a string.
      */
     public function testGetColor(): void
     {
@@ -117,7 +117,7 @@ class CardTest extends TestCase
     }
 
     /**
-     * Test draw() method to check if the output is correct.
+     * Test draw() method and verify if the output is correct.
      */
     public function testDraw(): void
     {

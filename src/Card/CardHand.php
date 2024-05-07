@@ -24,10 +24,19 @@ class CardHand
     public function remove(Card $card): void
     {
         $index = array_search($card, $this->cards);
-        if ($index) {
+        if ($index !== false) {
             unset($this->cards[$index]);
         }
     }
+
+
+    // public function remove(Card $card): void
+    // {
+    //     $index = array_search($card, $this->cards);
+    //     if ($index) {
+    //         unset($this->cards[$index]);
+    //     }
+    // }
 
     public function shuffle(): void
     {

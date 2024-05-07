@@ -27,7 +27,7 @@ class DeckOfCardsTest extends TestCase
     }
 
     /**
-     * Construct object with no arguments to check if the default values are set correctly.
+     * Construct object with no arguments and verify if the default values are set correctly.
      */
     public function testCreateObjectWithNoArguments(): void
     {
@@ -36,7 +36,7 @@ class DeckOfCardsTest extends TestCase
     }
 
     /**
-     * Test isCompleteDeck() method to check if the output is the expected Boolean.
+     * Test isCompleteDeck() method and verify if the output is the expected Boolean.
      */
     public function testCompleteDeck(): void
     {
@@ -44,7 +44,7 @@ class DeckOfCardsTest extends TestCase
     }
 
     /**
-     * Test isCompleteDeck() method to check if the output is the expected Boolean.
+     * Test isCompleteDeck() method and verify if the output is the expected Boolean.
      */
     public function testIncompleteDeck(): void
     {

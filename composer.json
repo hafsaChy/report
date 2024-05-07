@@ -93,7 +93,6 @@
         "phpmd": "tools/phpmd/vendor/bin/phpmd . text tools/phpmd/phpmd.xml || true",
         "phpstan": "tools/phpstan/vendor/bin/phpstan analyse -c tools/phpstan/phpstan.neon || true",
         "lint": [
-            "csfix",
             "@phpmd",
             "@phpstan"
         ],

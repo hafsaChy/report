@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
 class CardHandTest extends TestCase
 {
     /**
-     * Construct object with no arguments to check if the default values are set correctly.
+     * Construct object with no arguments and verify if the default values are set correctly.
      */
     public function testCreateObjectWithNoArguments(): void
     {
@@ -21,7 +21,7 @@ class CardHandTest extends TestCase
     }
 
     /**
-     * Test add() method to check if the added objects are in the $cards array.
+     * Test add() method and verify the added objects are in the $cards array.
      */
     public function testAddCard(): void
     {
@@ -33,7 +33,7 @@ class CardHandTest extends TestCase
     }
 
     /**
-     * Test remove() method to check if the removed objects are no longer in the $cards array.
+     * Test remove() method and verify if the removed objects are no longer in the $cards array.
      */
     public function testRemoveCard(): void
     {
@@ -46,7 +46,7 @@ class CardHandTest extends TestCase
     }
 
     /**
-     * Test getValues() method to check if the output is a correct array of an array of strings.
+     * Test getValues() method and verify if the output is a correct array of an array of strings.
      */
     public function testGetValues(): void
     {
@@ -70,7 +70,7 @@ class CardHandTest extends TestCase
     }
 
     /**
-     * Test getStrings() method to check if the output is a correct array of strings.
+     * Test getStrings() method and verify if the output is a correct array of strings.
      */
     public function testGetStrings(): void
     {
@@ -93,7 +93,7 @@ class CardHandTest extends TestCase
     }
 
     /**
-     * Test getColors() method to check if the output is a correct array of strings.
+     * Test getColors() method and verify if the output is a correct array of strings.
      */
     public function testGetColors(): void
     {
@@ -116,7 +116,7 @@ class CardHandTest extends TestCase
     }
 
     /**
-     * Test shuffle() method to check if $cards are shuffled.
+     * Test shuffle() method and verify if $cards are shuffled.
      */
     public function testShuffle(): void
     {
@@ -137,16 +137,16 @@ class CardHandTest extends TestCase
     }
 
     /**
-     * Test draw() method to check if the output is array of Card.
+     * Test draw() method and verify the output is array of Card.
      */
     public function testDraw(): void
     {
-        $cards = new CardHAnd();
+        $cards = new CardHand();
         $testCards = [
-            "hjärter" => 5,
-            "klöver" => 10,
-            "spader" => 1,
-            "ruter" => 12
+            "hearts" => 5,
+            "clubs" => 10,
+            "spades" => 1,
+            "diamonds" => 12
         ];
 
         foreach ($testCards as $key => $value) {
