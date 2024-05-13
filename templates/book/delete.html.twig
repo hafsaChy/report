@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Library{% endblock %}
+
+{% block body %}
+    <div class="lib-home">
+        <h1>Delete book</h1>
+        <div class="message-box warning">
+        <p>The book will be removed from the library!</p>
+        </div>
+        <form action="{{ path('book_delete', {idNumber: id}) }}" method="post">
+            <input class="input" id="bookId" name="bookId" type="hidden" value="{{id}}">
+            <label class="input-label" for="isbn">ISBN</label>
+            <input class="input" id="isbn" name="isbn" type="text" value="{{isbn}}" readonly>
+            <label class="input-label" for="title">Title</label>
+            <input class="input" id="title" name="title" type="text" value="{{title}}" readonly>
+            <label class="input-label" for="author">Author</label>
+            <input class="input" id="author" name="author" type="text" value="{{author}}" readonly>
+            <label class="input-label" for="image">Image (name or URL)</label>
+            <input class="input" id="image" name="image" type="text" value="{{image}}" readonly>
+            <input class="button blue-button" type="submit" value="Delete">
+        </form>
+        <a class="button" href="{{ path('library') }}">Cancel</a>
+    </div>
+{% endblock %}

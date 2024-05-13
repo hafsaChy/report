@@ -179,7 +179,7 @@ class Game21
     }
 
     /**
-     * Method that checks the winStatus of the game.
+     * Method that checks the checkWinStatus of the game.
      * @return array<string, string>
      */
     public function checkWinStatus()
@@ -235,4 +235,92 @@ class Game21
 
         return ["winner" => $winners[0], "loser" => $losers[0]];
     }
+
+
+    // public function checkWinStatus(): array
+    // {
+    //     $report = $this->collectHandTotals();
+    //     $winners = [];
+
+    //     foreach ($report as $key => $value) {
+    //         if ($value <= 21) {
+    //             $winners[] = $key;
+    //         }
+    //     }
+
+    //     // If there are multiple winners, determine the best one
+    //     if (count($winners) > 1) {
+    //         $winners = $this->determineBestWinner($report);
+    //         $losers = array_diff(array_keys($report), $winners);
+    //         return ["winner" => $winners[0], "loser" => $losers[0] ?? ""];
+    //     }
+
+    //     // If there are no winners, declare bank as the winner if there are losers
+    //     if (empty($winners)) {
+    //         return ["winner" => (empty($report)) ? "bank" : "", "loser" => ""];
+    //     }
+
+    //     // If there are no losers, declare an empty string as the loser
+    //     return ["winner" => $winners[0], "loser" => ""];
+    // }
+
+    // /**
+    //  * Collect hand totals for each player with non-empty hands.
+    //  *
+    //  * @return array<string, int> Associative array with player names as keys and hand totals as values.
+    //  */
+    // private function collectHandTotals(): array
+    // {
+    //     $report = [];
+    //     $bankDraws = 0; // Track the number of cards drawn by the bank
+
+    //     foreach ($this->queue as $player) {
+    //         // Check if the player is the bank and has drawn less than two cards
+    //         if ($player->name === "bank" && $bankDraws < 2) {
+    //             $report[$player->name] = $this->getHandTotal($player);
+    //             $bankDraws++; // Increment the count of bank draws
+    //         } elseif ($player->getHandCount() > 0) {
+    //             $report[$player->name] = $this->getHandTotal($player);
+    //         }
+    //     }
+
+    //     // If the bank has already drawn two cards, check if it has won the game
+    //     if ($bankDraws == 2) {
+    //         $bankTotal = $report["bank"] ?? 0;
+    //         // Check if the bank's total is greater than 21
+    //         if ($bankTotal > 21) {
+    //             // Remove the bank from the report, indicating that it has lost
+    //             unset($report["bank"]);
+    //         }
+    //     }
+
+    //     return $report;
+    // }
+
+
+    // /**
+    //  * Determine the best winner based on the difference to 21.
+    //  *
+    //  * @param array<string, int> $report Associative array with player names as keys and hand totals as values.
+    //  * @return array<string> Array containing the name of the best winner.
+    //  */
+    // private function determineBestWinner(array $report): array
+    // {
+    //     $diffTo21 = [];
+    //     foreach ($report as $key => $value) {
+    //         $diffTo21[$key] = 21 - $value;
+    //     }
+    //     asort($diffTo21);
+    //     $status = array_keys($diffTo21);
+
+    //     // If multiple players have the same difference to 21, declare a draw
+    //     if (count($diffTo21) != count(array_unique($diffTo21))) {
+    //         return ["bank"];
+    //     }
+
+    //     return [$status[0]];
+    // }
+
+
+
 }

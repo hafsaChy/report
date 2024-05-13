@@ -65,5 +65,27 @@
             </form>
         </div>
         <br>
+
+        <div class="api">
+        <h2>Show all books in the library</h2>
+        <p>
+            This route takes you to a page that displays a JSON object with all existing books in the library.
+        </p>
+        <a class="button blue-button" href="{{ path('api_library') }}">All books in the library</a>
+        </div>
+        <br>
+        <div class="api">
+            <h2>Show one book with given ISBN number</h2>
+            <p>
+                This route takes you to a page that displays a JSON object with one book through it's ISBN.
+            </p>
+            <form class="form-inline">
+            <input class="input-field" type="text" name="isbn" minlength="10" maxlength="17" placeholder="ISBN">
+            <input class="button blue-button" type="submit" value="Search book with this ISBN"
+                onClick="this.form.action='{{ path('api_book_post_isbn') }}';this.form.method='post';"
+            >
+            </form>
+        </div>
+        <br>
     </div>
 {% endblock %}

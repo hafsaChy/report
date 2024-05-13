@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Library{% endblock %}
+
+{% block body %}
+    <div class="lib-home">
+        <div class="flex-row flex-spread">
+        <h1>Avaiable books ({{books|length}})</h1>
+        <div class="flex-row flex-end">
+            <a class="button blue-button" title="add new book" style="padding-right: 30px; padding-left: 30px;" href="{{ path('book_add') }}">&#43;</a>
+            <a class="button blue-button" style="padding-right: 30px; padding-left: 30px;" title="reset" href="{{ path('reset_book') }}">&#8634;</a>
+        </div>
+        <br>
+        <div class="box box-blue">
+            <div class="library">
+                {% for book in books %}
+                    {% if loop.index % 3 == 1 %}
+                        <div class="row">
+                    {% endif %}
+                    <div class="col">
+                        <div class="banner">
+                            <a href="{{ path('book_by_id', {idNumber: book.id}) }}" title="{{ book.title }}">
+                                <img alt="{{ book.title }}" src="{{ asset('img/books/') }}{{ book.image }}">
+                            </a>
+                        </div>
+                    </div>
+                    {% if loop.index % 3 == 0 or loop.last %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <a class="button blue-button" href="{{ path('library') }}">&#60; Back to the library landing page</a>    
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Library{% endblock %}
+
+{% block body %}
+    <div class="lib-home">
+        <h1>Library</h1>
+        <img class="lib-img" alt="Library" src="{{ asset('img/library.jpg') }}">
+        <div class="flex-column flex-spread">
+            <a class="button blue-button" href="{{ path('book_show_all') }}">Show all books</a>
+            <form class="form-inline" action="{{ path('book_search') }}" method="get">
+                <input class="input-field" type="text" name="search" placeholder="Search book with id" minlength="1">
+                <input class="button" type="submit" value="&#128269;">
+            </form>
+        </div>
+    </div>
+    <br>
+    <br>
+{% endblock %}

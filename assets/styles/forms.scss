@@ -61,3 +61,21 @@
     background-image: none;
     box-shadow: inset 0 2px 4px #0019b0;
 }
+
+.orange-button {
+    color: #fff;
+    background-color: #e19720;
+    background-image: linear-gradient(#e1c528, #f2d603);
+    border-color: #d7b301;
+}
+
+.orange-button:hover {
+    background-color: #c0a000;
+    background-image: none;
+}
+
+.orange-button:active {
+    background-color: #c08600;
+    background-image: none;
+    box-shadow: inset 0 2px 4px #bca301;
+}

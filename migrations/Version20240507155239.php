@@ -17,7 +17,7 @@ final class Version20240507155239 extends AbstractMigration
         return '';
     }
 
-    public function up(Schema $schema): void
+    public function up(): void
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE product (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -31,7 +31,7 @@ final class Version20240507155239 extends AbstractMigration
         $this->addSql('CREATE INDEX IDX_75EA56E016BA31DB ON messenger_messages (delivered_at)');
     }
 
-    public function down(Schema $schema): void
+    public function down(): void
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('DROP TABLE product');

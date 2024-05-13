@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Library{% endblock %}
+
+{% block body %}
+    <div class="lib-home">
+        <h1>Add one book</h1>
+        <form action="{{ path('book_create') }}" method="post">
+            <label class="input-label" for="isbn">ISBN</label>
+            <input class="input" id="isbn" name="isbn" type="text" minlength="10" maxlength="17" required>
+            <label class="input-label" for="title">Title</label>
+            <input class="input" id="title" name="title" type="text" maxlength="255" required>
+            <label class="input-label" for="author">Author</label>
+            <input class="input" id="author" name="author" type="text" maxlength="255" required>
+            <label class="input-label" for="image">Image (name or URL)</label>
+            <input class="input" id="image" name="image" type="text" maxlength="255">
+            <input class="button blue-button" type="submit" value="Add">
+        </form>
+        <a class="button" href="{{ path('book_show_all') }}">Cancel</a>
+    </div>
+{% endblock %}
