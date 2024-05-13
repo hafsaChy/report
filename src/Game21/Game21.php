@@ -65,7 +65,6 @@ class Game21
      */
     public function getNextPlayerInQueue()
     {
-        //
         if ($this->currentInQueue < count($this->queue)) {
             $this->currentInQueue += 1;
         }

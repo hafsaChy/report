@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="40" assertions="139" errors="0" warnings="0" failures="0" skipped="0" time="0.033066">
+    <testsuite name="Project Test Suite" tests="40" assertions="139" errors="0" warnings="0" failures="0" skipped="0" time="0.033066">
+      <testsuite name="App\Card\CardGraphicTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardGraphicTest.php" tests="2" assertions="9" errors="0" warnings="0" failures="0" skipped="0" time="0.006490">
+        <testcase name="testCreateObjectWithNoArguments" class="App\Card\CardGraphicTest" classname="App.Card.CardGraphicTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardGraphicTest.php" line="15" assertions="7" time="0.005791"/>
+        <testcase name="testGetAsString" class="App\Card\CardGraphicTest" classname="App.Card.CardGraphicTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardGraphicTest.php" line="30" assertions="2" time="0.000698"/>
+      </testsuite>
+      <testsuite name="App\Card\CardHandTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" tests="8" assertions="31" errors="0" warnings="0" failures="0" skipped="0" time="0.007379">
+        <testcase name="testCreateObjectWithNoArguments" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="15" assertions="2" time="0.000973"/>
+        <testcase name="testAddCard" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="26" assertions="1" time="0.000317"/>
+        <testcase name="testRemoveCard" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="38" assertions="1" time="0.000249"/>
+        <testcase name="testGetValues" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="51" assertions="6" time="0.002103"/>
+        <testcase name="testGetStrings" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="75" assertions="5" time="0.000752"/>
+        <testcase name="testGetColors" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="98" assertions="5" time="0.000470"/>
+        <testcase name="testShuffle" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="121" assertions="3" time="0.001816"/>
+        <testcase name="testDraw" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="142" assertions="8" time="0.000699"/>
+      </testsuite>
+      <testsuite name="App\Card\CardTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" tests="6" assertions="27" errors="0" warnings="0" failures="0" skipped="0" time="0.002005">
+        <testcase name="testCreateObjectWithNoArguments" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="15" assertions="7" time="0.000261"/>
+        <testcase name="testCreateObjectWithArguments" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="30" assertions="9" time="0.000295"/>
+        <testcase name="testMethodReturningCardValue" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="50" assertions="6" time="0.000332"/>
+        <testcase name="testGetAsString" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="87" assertions="2" time="0.000585"/>
+        <testcase name="testGetColor" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="102" assertions="2" time="0.000279"/>
+        <testcase name="testDraw" class="App\Card\CardTest" classname="App.Card.CardTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="122" assertions="1" time="0.000254"/>
+      </testsuite>
+      <testsuite name="App\Card\DeckOfCardsTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" tests="3" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.002331">
+        <testcase name="testCreateObjectWithNoArguments" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="32" assertions="1" time="0.000740"/>
+        <testcase name="testCompleteDeck" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="41" assertions="1" time="0.000816"/>
+        <testcase name="testIncompleteDeck" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="49" assertions="1" time="0.000775"/>
+      </testsuite>
+      <testsuite name="App\Game21\BankTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/BankTest.php" tests="1" assertions="3" errors="0" warnings="0" failures="0" skipped="0" time="0.000892">
+        <testcase name="testCreateObject" class="App\Game21\BankTest" classname="App.Game21.BankTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/BankTest.php" line="15" assertions="3" time="0.000892"/>
+      </testsuite>
+      <testsuite name="App\Game21\Game21Test" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/Game21Test.php" tests="8" assertions="24" errors="0" warnings="0" failures="0" skipped="0" time="0.006194">
+        <testcase name="testCreateObject" class="App\Game21\Game21Test" classname="App.Game21.Game21Test" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/Game21Test.php" line="44" assertions="1" time="0.001344"/>
+        <testcase name="testPlayerQueueInGame" class="App\Game21\Game21Test" classname="App.Game21.Game21Test" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/Game21Test.php" line="53" assertions="6" time="0.000711"/>
+        <testcase name="testCurrentPlayerHandIsEmpty" class="App\Game21\Game21Test" classname="App.Game21.Game21Test" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/Game21Test.php" line="77" assertions="3" time="0.001100"/>
+        <testcase name="testCardDeckInGame" class="App\Game21\Game21Test" classname="App.Game21.Game21Test" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/Game21Test.php" line="91" assertions="6" time="0.000737"/>
+        <testcase name="testHandTotalWithAceLower" class="App\Game21\Game21Test" classname="App.Game21.Game21Test" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/Game21Test.php" line="112" assertions="2" time="0.000571"/>
+        <testcase name="testHandTotalWithAceGreater" class="App\Game21\Game21Test" classname="App.Game21.Game21Test" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/Game21Test.php" line="135" assertions="2" time="0.000614"/>
+        <testcase name="testHandTotalWithoutAceLower" class="App\Game21\Game21Test" classname="App.Game21.Game21Test" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/Game21Test.php" line="158" assertions="2" time="0.000586"/>
+        <testcase name="testHandTotalWithoutAceGreater" class="App\Game21\Game21Test" classname="App.Game21.Game21Test" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/Game21Test.php" line="181" assertions="2" time="0.000530"/>
+      </testsuite>
+      <testsuite name="App\Game21\Game21WinStatusTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/Game21WinStatusTest.php" tests="6" assertions="24" errors="0" warnings="0" failures="0" skipped="0" time="0.005775">
+        <testcase name="testNoLoserStatusYet" class="App\Game21\Game21WinStatusTest" classname="App.Game21.Game21WinStatusTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/Game21WinStatusTest.php" line="45" assertions="4" time="0.001316"/>
+        <testcase name="testPlayersHandTotalGreaterThan21" class="App\Game21\Game21WinStatusTest" classname="App.Game21.Game21WinStatusTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/Game21WinStatusTest.php" line="73" assertions="4" time="0.000586"/>
+        <testcase name="testPlayersHandTotalCloserTo21" class="App\Game21\Game21WinStatusTest" classname="App.Game21.Game21WinStatusTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/Game21WinStatusTest.php" line="101" assertions="4" time="0.001390"/>
+        <testcase name="testBanksHandTotalCloserTo21" class="App\Game21\Game21WinStatusTest" classname="App.Game21.Game21WinStatusTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/Game21WinStatusTest.php" line="137" assertions="4" time="0.001140"/>
+        <testcase name="testBanksHandTotalGreaterThan21" class="App\Game21\Game21WinStatusTest" classname="App.Game21.Game21WinStatusTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/Game21WinStatusTest.php" line="173" assertions="4" time="0.000664"/>
+        <testcase name="testHandTotalEqual" class="App\Game21\Game21WinStatusTest" classname="App.Game21.Game21WinStatusTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/Game21WinStatusTest.php" line="210" assertions="4" time="0.000679"/>
+      </testsuite>
+      <testsuite name="App\Game21\PlayerTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/PlayerTest.php" tests="6" assertions="18" errors="0" warnings="0" failures="0" skipped="0" time="0.002000">
+        <testcase name="testCreateObject" class="App\Game21\PlayerTest" classname="App.Game21.PlayerTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/PlayerTest.php" line="42" assertions="3" time="0.000248"/>
+        <testcase name="testGetHandCount" class="App\Game21\PlayerTest" classname="App.Game21.PlayerTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/PlayerTest.php" line="52" assertions="2" time="0.000255"/>
+        <testcase name="testAddCard" class="App\Game21\PlayerTest" classname="App.Game21.PlayerTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/PlayerTest.php" line="61" assertions="1" time="0.000551"/>
+        <testcase name="testGetHandAsString" class="App\Game21\PlayerTest" classname="App.Game21.PlayerTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/PlayerTest.php" line="76" assertions="4" time="0.000304"/>
+        <testcase name="testGetHandValues" class="App\Game21\PlayerTest" classname="App.Game21.PlayerTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/PlayerTest.php" line="91" assertions="5" time="0.000348"/>
+        <testcase name="testGetHandColors" class="App\Game21\PlayerTest" classname="App.Game21.PlayerTest" file="/home/hafsa/dbwebb-kurser/mvc/me/report/tests/Game21/PlayerTest.php" line="107" assertions="3" time="0.000294"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
