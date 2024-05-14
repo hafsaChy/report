@@ -236,6 +236,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-Game21Controller.html#method_gamePlay"
         },                {
+            "fqsen": "\\App\\Controller\\Game21Controller\u003A\u003AinitializeGame\u0028\u0029",
+            "name": "initializeGame",
+            "summary": "",
+            "url": "classes/App-Controller-Game21Controller.html#method_initializeGame"
+        },                {
             "fqsen": "\\App\\Controller\\Game21Controller\u003A\u003AgameDraw\u0028\u0029",
             "name": "gameDraw",
             "summary": "",
