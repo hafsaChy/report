@@ -33,23 +33,12 @@ class Game21Controller extends AbstractController
         $session->invalidate();
         $session->start();
 
-        $card = new CardGraphic();
-        $deck = new DeckOfCards();
-        $game = new Game21();
-        $player = new Player("Player 1");
-        $bank = new Bank();
-
-        foreach ($card->suites as $suite) {
-            for ($i = $card->minValue; $i <= $card->maxValue; $i++) {
-                $deck->add(new CardGraphic($suite, $i));
-            }
+        try {
+            $this->initializeGame($session);
+        } catch (\Exception $e) {
+            // Handle initialization errors
+            return $this->redirectToRoute('game_home');
         }
-
-        $game->addCardDeck($deck);
-        $game->addPlayer($player);
-        $game->addPlayer($bank);
-
-        $session->set("game", $game);
 
         return $this->redirectToRoute('game_play');
     }
@@ -57,6 +46,13 @@ class Game21Controller extends AbstractController
     #[Route("/game/play", name: "game_play")]
     public function gamePlay(SessionInterface $session): Response
     {
+        try {
+            $this->initializeGame($session);
+        } catch (\Exception $e) {
+            // Handle initialization errors
+            return $this->redirectToRoute('game_home');
+        }
+
         $data = [
             "currentPlayer" => "",
             "playerCards" => [],
@@ -95,6 +91,114 @@ class Game21Controller extends AbstractController
 
         return $this->render('game21/game21_play.html.twig', $data);
     }
+
+    private function initializeGame(SessionInterface $session): void
+    {
+        $game = $session->get("game");
+
+        if (!$game instanceof Game21) {
+            $card = new CardGraphic();
+            $deck = new DeckOfCards();
+            $game = new Game21();
+            $player = new Player("Player 1");
+            $bank = new Bank();
+
+            foreach ($card->suites as $suite) {
+                for ($i = $card->minValue; $i <= $card->maxValue; $i++) {
+                    $deck->add(new CardGraphic($suite, $i));
+                }
+            }
+
+            $game->addCardDeck($deck);
+            $game->addPlayer($player);
+            $game->addPlayer($bank);
+
+            $session->set("game", $game);
+        }
+    }
+
+    // previous code
+    // #[Route("/game", name: "game_home")]
+    // public function gameHome(): Response
+    // {
+    //     return $this->render('game21/game21.html.twig');
+    // }
+
+    // #[Route("/game/doc", name: "game_doc")]
+    // public function gameDoc(): Response
+    // {
+    //     return $this->render('game21/game21_doc.html.twig');
+    // }
+
+    // #[Route("/game/initiate", name: "game_init")]
+    // public function gameInit(SessionInterface $session): Response
+    // {
+    //     $session->get('session');
+    //     $session->invalidate();
+    //     $session->start();
+
+    //     $card = new CardGraphic();
+    //     $deck = new DeckOfCards();
+    //     $game = new Game21();
+    //     $player = new Player("Player 1");
+    //     $bank = new Bank();
+
+    //     foreach ($card->suites as $suite) {
+    //         for ($i = $card->minValue; $i <= $card->maxValue; $i++) {
+    //             $deck->add(new CardGraphic($suite, $i));
+    //         }
+    //     }
+
+    //     $game->addCardDeck($deck);
+    //     $game->addPlayer($player);
+    //     $game->addPlayer($bank);
+
+    //     $session->set("game", $game);
+
+    //     return $this->redirectToRoute('game_play');
+    // }
+
+    // #[Route("/game/play", name: "game_play")]
+    // public function gamePlay(SessionInterface $session): Response
+    // {
+    //     $data = [
+    //         "currentPlayer" => "",
+    //         "playerCards" => [],
+    //         "playerCardTotal" => 0,
+    //         "bankCards" => [],
+    //         "bankCardTotal" => 0,
+    //         "winner" => "",
+    //         "loser" => ""
+    //     ];
+
+    //     $game = $session->get("game");
+
+    //     if ($game instanceof Game21) {
+    //         $currentPlayer = $game->getCurrentPlayerInQueue();
+    //         $data["currentPlayer"] = $currentPlayer->name;
+    //         $winStatus = $game->checkWinStatus();
+    //         $data["winner"] = $winStatus["winner"];
+    //         $data["loser"] = $winStatus["loser"];
+    //     }
+
+    //     if ($session->has("player_cards")) {
+    //         $data["playerCards"] = $session->get("player_cards");
+    //     }
+
+    //     if ($session->has("player_card_total")) {
+    //         $data["playerCardTotal"] = $session->get("player_card_total");
+    //     }
+
+    //     if ($session->has("bank_cards")) {
+    //         $data["bankCards"] = $session->get("bank_cards");
+    //     }
+
+    //     if ($session->has("bank_card_total")) {
+    //         $data["bankCardTotal"] = $session->get("bank_card_total");
+    //     }
+
+    //     return $this->render('game21/game21_play.html.twig', $data);
+    // }
 
     #[Route("/game/draw", name: "game_draw_card", methods: ["POST"])]
     public function gameDraw(SessionInterface $session): Response
