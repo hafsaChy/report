@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1715675356">
-  <project timestamp="1715675356">
+<coverage generated="1715773611">
+  <project timestamp="1715773611">
     <file name="/home/hafsa/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="14" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="32" elements="38" coveredelements="38"/>
@@ -20,11 +20,11 @@
       <line num="53" type="method" name="convertCardNumberToString" visibility="protected" complexity="5" crap="5" count="36"/>
       <line num="55" type="stmt" count="36"/>
       <line num="57" type="stmt" count="36"/>
-      <line num="58" type="stmt" count="25"/>
+      <line num="58" type="stmt" count="22"/>
       <line num="61" type="stmt" count="36"/>
-      <line num="62" type="stmt" count="23"/>
+      <line num="62" type="stmt" count="20"/>
       <line num="65" type="stmt" count="36"/>
-      <line num="66" type="stmt" count="21"/>
+      <line num="66" type="stmt" count="22"/>
       <line num="69" type="stmt" count="36"/>
       <line num="70" type="stmt" count="22"/>
       <line num="73" type="stmt" count="36"/>
@@ -636,7 +636,7 @@
     </file>
     <file name="/home/hafsa/dbwebb-kurser/mvc/me/report/src/Controller/MeControllerTwig.php">
       <class name="App\Controller\MeControllerTwig" namespace="global">
-        <metrics complexity="6" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="19" coveredelements="0"/>
+        <metrics complexity="7" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="21" coveredelements="0"/>
       </class>
       <line num="12" type="method" name="home" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="15" type="stmt" count="0"/>
@@ -657,7 +657,9 @@
       <line num="48" type="stmt" count="0"/>
       <line num="51" type="method" name="library" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="54" type="stmt" count="0"/>
-      <metrics loc="57" ncloc="57" classes="1" methods="6" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="0" elements="19" coveredelements="0"/>
+      <line num="57" type="method" name="metrics" visibility="public" complexity="1" crap="2" count="0"/>
+      <line num="60" type="stmt" count="0"/>
+      <metrics loc="63" ncloc="63" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="0" elements="21" coveredelements="0"/>
     </file>
     <file name="/home/hafsa/dbwebb-kurser/mvc/me/report/src/Controller/ProductController.php">
       <class name="App\Controller\ProductController" namespace="global">
@@ -930,6 +932,6 @@
       <line num="16" type="stmt" count="0"/>
       <metrics loc="80" ncloc="23" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
     </file>
-    <metrics files="21" loc="2677" ncloc="1981" classes="20" methods="103" coveredmethods="36" conditionals="0" coveredconditionals="0" statements="700" coveredstatements="162" elements="803" coveredelements="198"/>
+    <metrics files="21" loc="2683" ncloc="1987" classes="20" methods="104" coveredmethods="36" conditionals="0" coveredconditionals="0" statements="701" coveredstatements="162" elements="805" coveredelements="198"/>
   </project>
 </coverage>

@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Metrics{% endblock %}
+
+{% block body %}
+    <div class="metrics-home">
+
+        <h1>Metrics analysis</h1>
+        <article class="article">
+        <br>
+        <p>
+        The code quality of my PHP project is analyzed and disscussed in this report. To get an overview of the quality of the code, I will use the reports from the tools <i>PhpMetrics</i> and <i>Scrutinizer</i>. By defining metrics and identifying weaknesses in the code, I will then implement a series of improvements to raise the quality of the code. Finally, I will generate new reports based on the improved code and evaluate if the scores from PhpMetrics and Scrutinizer have improved. The report concludes with a discussion of clean code and the tools used in the investigation.
+        </p>
+
+        <h2>Introduction</h2>
+        <p>
+        {# explain the six C's and how they can affect code quality. Exemplify, where appropriate, some metrics associated with your own code and provide a brief explanation of the metric as it relates to code quality. #}
+            In this survey, the code quality according to six C's of code quality are assessed. The six C's and how they can affect code quality are disscussed in this section.
+        </p>
+
+        <h4>1. Code style</h4>
+        <p>
+            Code style refers to the conventions and guidelines followed in writing code. It includes aspects such as indentation, naming conventions, commenting practices, and code formatting. Consistent code style improves code readability and maintainability, making it easier for developers to understand and work with the codebase.
+
+            Different types of coding styles are used in different programming languages and development environments. It is also common to use code style tools or linters to automatically check that the code follows the chosen code style. The tools PHP-CS-Fixer, PhpStan, and PhpMd are used in this project to ensure a good code style. In addition, Scrutinizer and PhpMetrics include various metrics to further assess code quality.
+        </p>
+
+        <h4>2. Coverage</h4>
+        <p>
+        Coverage in software testing refers to the degree to which the source code of a program is executed during testing. It measures how much of the code is exercised by the test suite. High coverage indicates that most parts of the code have been tested, reducing the likelihood of undetected bugs. However, high coverage does not guarantee the absence of bugs, as it is possible to have ineffective tests or untested edge cases.
+            
+        </p>
+
+        <h4>3. Complexity</h4>
+        <p>Complexity in software development refers to the intricacy and difficulty of understanding a piece of code. It can be measured using metrics such as cyclomatic complexity, which counts the number of linearly independent paths through a program's source code. High complexity can make code harder to maintain, debug, and extend. It is important to keep code complexity low by breaking down complex tasks into smaller, more manageable components.</p>
+        <h4>4. Cohesion</h4>
+        <p>Cohesion is a measure of how closely related and focused the responsibilities of a module or class are. High cohesion means that a module or class performs a single, well-defined task or set of closely related tasks. Modules with high cohesion are easier to understand, reuse, and maintain. Low cohesion, on the other hand, indicates that a module or class has multiple unrelated responsibilities, leading to code that is harder to understand and modify.</p>
+        <h4>5. Coupling</h4>
+        <p>Coupling refers to the degree of interdependence between modules or classes in a software system. High coupling means that modules are closely connected and rely heavily on each other's implementations. Tight coupling makes code less flexible and harder to change, as modifications to one module may require changes in other modules. To improve maintainability and flexibility, it is important to reduce coupling by promoting loose coupling and high cohesion.</p>
+        <h4>6. CRAP </h4>
+        <p>CRAP (Change Risk Anti-Patterns)is a metric used to identify code that is risky to change. It combines cyclomatic complexity with test coverage to measure the "crap score" of a method or function. A high CRAP score indicates that a method is complex and has low test coverage, making it prone to errors and difficult to modify safely. Developers can use CRAP scores to prioritize refactoring efforts and improve the maintainability of their codebase.</p>
+
+        <h2>PhpMetrics</h2>
+
+        
+        <h2>Scrutinizer</h2>
+    
+        
+        <h2>Discussion</h2>
+        
+        </article>
+    </div>
+{% endblock %}
