@@ -53,7 +53,7 @@ class CardHand
     }
 
     /**
-     * @return array<int<0, max>, array<string>>
+     * @var array<int, array<string>> $variable
      */
     public function getValues(): array
     {
