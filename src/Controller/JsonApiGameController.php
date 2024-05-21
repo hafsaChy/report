@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+
 use App\Game21\Game21;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;

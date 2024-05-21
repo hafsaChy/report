@@ -286,6 +286,41 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-GameController.html#method_cardDeckDrawNum"
         },                {
+            "fqsen": "\\App\\Controller\\JsonApiController",
+            "name": "JsonApiController",
+            "summary": "",
+            "url": "classes/App-Controller-JsonApiController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonApiController\u003A\u003AinitCallback\u0028\u0029",
+            "name": "initCallback",
+            "summary": "",
+            "url": "classes/App-Controller-JsonApiController.html#method_initCallback"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonApiController\u003A\u003AapiDeckGet\u0028\u0029",
+            "name": "apiDeckGet",
+            "summary": "",
+            "url": "classes/App-Controller-JsonApiController.html#method_apiDeckGet"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonApiController\u003A\u003AapiDeckShufflePost\u0028\u0029",
+            "name": "apiDeckShufflePost",
+            "summary": "",
+            "url": "classes/App-Controller-JsonApiController.html#method_apiDeckShufflePost"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonApiController\u003A\u003AapiDeckDrawPost\u0028\u0029",
+            "name": "apiDeckDrawPost",
+            "summary": "",
+            "url": "classes/App-Controller-JsonApiController.html#method_apiDeckDrawPost"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonApiController\u003A\u003AapiDeckDrawNumPost\u0028\u0029",
+            "name": "apiDeckDrawNumPost",
+            "summary": "",
+            "url": "classes/App-Controller-JsonApiController.html#method_apiDeckDrawNumPost"
+        },                {
+            "fqsen": "\\App\\Controller\\JsonApiController\u003A\u003AapiDeckDrawGet\u0028\u0029",
+            "name": "apiDeckDrawGet",
+            "summary": "",
+            "url": "classes/App-Controller-JsonApiController.html#method_apiDeckDrawGet"
+        },                {
             "fqsen": "\\App\\Controller\\JsonApiGameController",
             "name": "JsonApiGameController",
             "summary": "",
@@ -365,11 +400,6 @@ Search.appendIndex(
             "name": "metrics",
             "summary": "",
             "url": "classes/App-Controller-MeControllerTwig.html#method_metrics"
-        },                {
-            "fqsen": "\\App\\Controller\\MeControllerTwig\u003A\u003Ametricsv1\u0028\u0029",
-            "name": "metricsv1",
-            "summary": "",
-            "url": "classes/App-Controller-MeControllerTwig.html#method_metricsv1"
         },                {
             "fqsen": "\\App\\Controller\\ProductController",
             "name": "ProductController",
@@ -613,8 +643,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Game21\\Game21\u003A\u003AcheckWinStatus\u0028\u0029",
             "name": "checkWinStatus",
-            "summary": "Method\u0020that\u0020checks\u0020the\u0020checkWinStatus\u0020of\u0020the\u0020game.",
+            "summary": "This\u0020method\u0020checks\u0020the\u0020win\u0020status\u0020of\u0020the\u0020game.",
             "url": "classes/App-Game21-Game21.html#method_checkWinStatus"
+        },                {
+            "fqsen": "\\App\\Game21\\Game21\u003A\u003AreturnWinnerAndloser\u0028\u0029",
+            "name": "returnWinnerAndloser",
+            "summary": "This\u0020method\u0020returns\u0020the\u0020winner\u0020and\u0020loser\u0020if\u0020all\u0020players\u0020scored\u0020under\u002021.",
+            "url": "classes/App-Game21-Game21.html#method_returnWinnerAndloser"
         },                {
             "fqsen": "\\App\\Game21\\Game21\u003A\u003A\u0024queue",
             "name": "queue",
