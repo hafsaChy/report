@@ -82,7 +82,7 @@ class JsonApiController extends AbstractController
     ): Response {
         $deck = $session->get("deck");
 
-        $deckSize = 0;
+        // $deckSize = 0;
 
         if ($deck instanceof DeckOfCards) {
             $deckSize = $deck->getCount();
