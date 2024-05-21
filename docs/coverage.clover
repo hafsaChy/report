@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1715773611">
-  <project timestamp="1715773611">
+<coverage generated="1715845518">
+  <project timestamp="1715845518">
     <file name="/home/hafsa/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="14" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="32" elements="38" coveredelements="38"/>
@@ -22,9 +22,9 @@
       <line num="57" type="stmt" count="36"/>
       <line num="58" type="stmt" count="22"/>
       <line num="61" type="stmt" count="36"/>
-      <line num="62" type="stmt" count="20"/>
+      <line num="62" type="stmt" count="22"/>
       <line num="65" type="stmt" count="36"/>
-      <line num="66" type="stmt" count="22"/>
+      <line num="66" type="stmt" count="23"/>
       <line num="69" type="stmt" count="36"/>
       <line num="70" type="stmt" count="22"/>
       <line num="73" type="stmt" count="36"/>
@@ -41,7 +41,7 @@
       <line num="110" type="method" name="getColor" visibility="public" complexity="3" crap="3" count="4"/>
       <line num="112" type="stmt" count="4"/>
       <line num="114" type="stmt" count="4"/>
-      <line num="115" type="stmt" count="1"/>
+      <line num="115" type="stmt" count="2"/>
       <line num="118" type="stmt" count="4"/>
       <metrics loc="121" ncloc="94" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="32" elements="38" coveredelements="38"/>
     </file>
@@ -472,7 +472,7 @@
     </file>
     <file name="/home/hafsa/dbwebb-kurser/mvc/me/report/src/Controller/JsonApiController.php">
       <class name="App\Controller\JsonApiController" namespace="global">
-        <metrics complexity="27" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="124" coveredstatements="0" elements="132" coveredelements="0"/>
+        <metrics complexity="19" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="92" coveredstatements="0" elements="99" coveredelements="0"/>
       </class>
       <line num="19" type="method" name="jsonQuote" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="22" type="stmt" count="0"/>
@@ -573,6 +573,12 @@
       <line num="193" type="stmt" count="0"/>
       <line num="194" type="stmt" count="0"/>
       <line num="195" type="stmt" count="0"/>
+      <metrics loc="252" ncloc="207" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="92" coveredstatements="0" elements="99" coveredelements="0"/>
+    </file>
+    <file name="/home/hafsa/dbwebb-kurser/mvc/me/report/src/Controller/JsonApiGameController.php">
+      <class name="App\Controller\JsonApiGameController" namespace="global">
+        <metrics complexity="8" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="0" elements="33" coveredelements="0"/>
+      </class>
       <line num="198" type="method" name="apiGame21" visibility="public" complexity="8" crap="72" count="0"/>
       <line num="202" type="stmt" count="0"/>
       <line num="203" type="stmt" count="0"/>
@@ -606,7 +612,7 @@
       <line num="247" type="stmt" count="0"/>
       <line num="248" type="stmt" count="0"/>
       <line num="249" type="stmt" count="0"/>
-      <metrics loc="303" ncloc="258" classes="1" methods="8" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="124" coveredstatements="0" elements="132" coveredelements="0"/>
+      <metrics loc="252" ncloc="112" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="32" coveredstatements="0" elements="33" coveredelements="0"/>
     </file>
     <file name="/home/hafsa/dbwebb-kurser/mvc/me/report/src/Controller/JsonBookApiController.php">
       <class name="App\Controller\JsonBookApiController" namespace="global">
@@ -734,52 +740,52 @@
     </file>
     <file name="/home/hafsa/dbwebb-kurser/mvc/me/report/src/Entity/Book.php">
       <class name="App\Entity\Book" namespace="global">
-        <metrics complexity="10" methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="0" elements="25" coveredelements="0"/>
+        <metrics complexity="10" methods="10" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="13" elements="25" coveredelements="22"/>
       </class>
-      <line num="28" type="method" name="getId" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="30" type="stmt" count="0"/>
+      <line num="28" type="method" name="getId" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="30" type="stmt" count="1"/>
       <line num="33" type="method" name="setId" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="35" type="stmt" count="0"/>
       <line num="37" type="stmt" count="0"/>
-      <line num="40" type="method" name="getIsbn" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="42" type="stmt" count="0"/>
-      <line num="45" type="method" name="setIsbn" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="47" type="stmt" count="0"/>
-      <line num="49" type="stmt" count="0"/>
-      <line num="52" type="method" name="getTitle" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="54" type="stmt" count="0"/>
-      <line num="57" type="method" name="setTitle" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="59" type="stmt" count="0"/>
-      <line num="61" type="stmt" count="0"/>
-      <line num="64" type="method" name="getAuthor" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="66" type="stmt" count="0"/>
-      <line num="69" type="method" name="setAuthor" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="71" type="stmt" count="0"/>
-      <line num="73" type="stmt" count="0"/>
-      <line num="76" type="method" name="getImage" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="78" type="stmt" count="0"/>
-      <line num="81" type="method" name="setImage" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="83" type="stmt" count="0"/>
-      <line num="85" type="stmt" count="0"/>
-      <metrics loc="88" ncloc="88" classes="1" methods="10" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="0" elements="25" coveredelements="0"/>
+      <line num="40" type="method" name="getIsbn" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="42" type="stmt" count="1"/>
+      <line num="45" type="method" name="setIsbn" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="47" type="stmt" count="1"/>
+      <line num="49" type="stmt" count="1"/>
+      <line num="52" type="method" name="getTitle" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="54" type="stmt" count="1"/>
+      <line num="57" type="method" name="setTitle" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="59" type="stmt" count="1"/>
+      <line num="61" type="stmt" count="1"/>
+      <line num="64" type="method" name="getAuthor" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="66" type="stmt" count="1"/>
+      <line num="69" type="method" name="setAuthor" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="71" type="stmt" count="1"/>
+      <line num="73" type="stmt" count="1"/>
+      <line num="76" type="method" name="getImage" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="78" type="stmt" count="1"/>
+      <line num="81" type="method" name="setImage" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="83" type="stmt" count="1"/>
+      <line num="85" type="stmt" count="1"/>
+      <metrics loc="88" ncloc="88" classes="1" methods="10" coveredmethods="9" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="13" elements="25" coveredelements="22"/>
     </file>
     <file name="/home/hafsa/dbwebb-kurser/mvc/me/report/src/Entity/Product.php">
       <class name="App\Entity\Product" namespace="global">
-        <metrics complexity="5" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="12" coveredelements="0"/>
+        <metrics complexity="5" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="12" coveredelements="12"/>
       </class>
-      <line num="22" type="method" name="getId" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="24" type="stmt" count="0"/>
-      <line num="27" type="method" name="getName" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="29" type="stmt" count="0"/>
-      <line num="32" type="method" name="setName" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="34" type="stmt" count="0"/>
-      <line num="36" type="stmt" count="0"/>
-      <line num="39" type="method" name="getValue" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="41" type="stmt" count="0"/>
-      <line num="44" type="method" name="setValue" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="46" type="stmt" count="0"/>
-      <line num="48" type="stmt" count="0"/>
-      <metrics loc="51" ncloc="51" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="0" elements="12" coveredelements="0"/>
+      <line num="22" type="method" name="getId" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="27" type="method" name="getName" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="29" type="stmt" count="1"/>
+      <line num="32" type="method" name="setName" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="39" type="method" name="getValue" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="41" type="stmt" count="1"/>
+      <line num="44" type="method" name="setValue" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="46" type="stmt" count="1"/>
+      <line num="48" type="stmt" count="1"/>
+      <metrics loc="51" ncloc="51" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="12" coveredelements="12"/>
     </file>
     <file name="/home/hafsa/dbwebb-kurser/mvc/me/report/src/Game21/Bank.php">
       <class name="App\Game21\Bank" namespace="global">
@@ -932,6 +938,6 @@
       <line num="16" type="stmt" count="0"/>
       <metrics loc="80" ncloc="23" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
     </file>
-    <metrics files="21" loc="2683" ncloc="1987" classes="20" methods="104" coveredmethods="36" conditionals="0" coveredconditionals="0" statements="701" coveredstatements="162" elements="805" coveredelements="198"/>
+    <metrics files="22" loc="2884" ncloc="2048" classes="21" methods="104" coveredmethods="50" conditionals="0" coveredconditionals="0" statements="701" coveredstatements="182" elements="805" coveredelements="232"/>
   </project>
 </coverage>

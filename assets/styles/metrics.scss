@@ -2,3 +2,29 @@
     padding: 7%;
     background-color: whitesmoke;
 }
+
+.article {
+    counter-reset: figures;
+}
+
+.figure {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    counter-increment: figures;
+
+    img {
+        margin: 0 auto;
+    }
+}
+
+.fig-caption {
+    margin: 1rem auto;
+    width: fit-content;
+    font-size: 0.8rem;
+}
+
+.fig-caption::before {
+    content: 'Figure ' counter(figures) '. ';
+}

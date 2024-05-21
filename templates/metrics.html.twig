@@ -27,25 +27,150 @@
 
         <h4>2. Coverage</h4>
         <p>
-        Coverage in software testing refers to the degree to which the source code of a program is executed during testing. It measures how much of the code is exercised by the test suite. High coverage indicates that most parts of the code have been tested, reducing the likelihood of undetected bugs. However, high coverage does not guarantee the absence of bugs, as it is possible to have ineffective tests or untested edge cases.
-            
+        Coverage in software testing refers to the degree to which the source code of a program is executed during testing. It measures 
+        how much of the code is exercised by the test suite. High coverage indicates that most parts of the code have been tested, 
+        reducing the likelihood of undetected bugs. However, high coverage does not guarantee the absence of bugs, as it is possible to 
+        have ineffective tests or untested edge cases. By increasing code coverage, you can improve the reliability and quality of the code 
+        base and reduce the risk of bugs and errors.   
         </p>
 
         <h4>3. Complexity</h4>
-        <p>Complexity in software development refers to the intricacy and difficulty of understanding a piece of code. It can be measured using metrics such as cyclomatic complexity, which counts the number of linearly independent paths through a program's source code. High complexity can make code harder to maintain, debug, and extend. It is important to keep code complexity low by breaking down complex tasks into smaller, more manageable components.</p>
+        <p>Complexity in software development refers to the intricacy and difficulty of understanding a piece of code. It can be measured 
+        using metrics such as cyclomatic complexity, which counts the number of linearly independent paths through a program's source code. 
+        High complexity can make code harder to maintain, debug, and extend. It is important to keep code complexity low by breaking down 
+        complex tasks into smaller, more manageable components. Cyclomatic complexity is shown in both Scrutinizers and PhpMetrics report. 
+        </p>
         <h4>4. Cohesion</h4>
-        <p>Cohesion is a measure of how closely related and focused the responsibilities of a module or class are. High cohesion means that a module or class performs a single, well-defined task or set of closely related tasks. Modules with high cohesion are easier to understand, reuse, and maintain. Low cohesion, on the other hand, indicates that a module or class has multiple unrelated responsibilities, leading to code that is harder to understand and modify.</p>
+        <p>Cohesion is a measure of how closely related and focused the responsibilities of a module or class are. High cohesion means that 
+        a module or class performs a single, well-defined task or set of closely related tasks. Modules with high cohesion are easier to understand, 
+        reuse, and maintain. Low cohesion, on the other hand, indicates that a module or class has multiple unrelated responsibilities, leading to 
+        code that is harder to understand and modify. Cohesion is shown in both Scrutinizer's and PhpMetric's report, sometimes as LCOM (Lack of Cohesion in Methods).</p>
         <h4>5. Coupling</h4>
-        <p>Coupling refers to the degree of interdependence between modules or classes in a software system. High coupling means that modules are closely connected and rely heavily on each other's implementations. Tight coupling makes code less flexible and harder to change, as modifications to one module may require changes in other modules. To improve maintainability and flexibility, it is important to reduce coupling by promoting loose coupling and high cohesion.</p>
+        <p>Coupling refers to the degree of interdependence between modules or classes in a software system. 
+        High coupling means that modules are closely connected and rely heavily on each other's implementations. 
+        It makes code less flexible and harder to change, as modifications to one module may require 
+        changes in other modules. To improve maintainability and flexibility, it is important to reduce coupling 
+        by promoting loose coupling and high cohesion. In both Scrutinizer's and PhpMetric's report, the 
+        coupling for the classes are specified.</p>
         <h4>6. CRAP </h4>
-        <p>CRAP (Change Risk Anti-Patterns)is a metric used to identify code that is risky to change. It combines cyclomatic complexity with test coverage to measure the "crap score" of a method or function. A high CRAP score indicates that a method is complex and has low test coverage, making it prone to errors and difficult to modify safely. Developers can use CRAP scores to prioritize refactoring efforts and improve the maintainability of their codebase.</p>
+        <p>CRAP (Change Risk Anti-Patterns)is a metric used to identify code that is risky to change. 
+        CRAP scores can be seen in the Scrutinizer report and in the dashboard of the coverage report from PhpUnit. 
+        The CRAP score is calculated by multiplying 'code coverage' and 'cyclomatic complexity'.
+        A high CRAP score indicates that a method is complex and has low test coverage, making 
+        it prone to errors and difficult to modify safely. Developers can use CRAP scores to prioritize 
+        refactoring efforts and improve the maintainability of their codebase.</p>
 
         <h2>PhpMetrics</h2>
+        <p>
+        PhpMetrics is a tool for analyzing the quality of PHP code, providing comprehensive metrics to help developers 
+        understand and improve their codebases. It can be used as part of a CI/CD pipeline or as a standalone application 
+        to evaluate and improve code quality. It generates detailed reports on various aspects such as code complexity, 
+        maintainability, and adherence to best practices. By visualizing these metrics through charts and graphs, PhpMetrics 
+        helps identify areas that need refactoring, making it easier to enhance code performance and reliability. 
+        This tool is particularly useful for teams striving to maintain high standards in their PHP projects, 
+        ensuring that the code remains clean, efficient, and manageable. 
+        </p>
+        <p>
+        The PhpMetrics report for my project has revealed some notable insights. Firstly, the section on violations highlights 
+        that the App\Controller\JsonApiController class does not adhere to the single responsibility principle. This is unsurprising, 
+        as this class manages multiple calls and oversees all API routes. Such a violation increases the complexity of the class, 
+        making it more challenging to test. Additionally, the App\Controller\JsonApiController class has a high LCOM 
+        score, indicating low cohesion. This high score suggests that the methods within the class are not closely related, 
+        further complicating testing and maintenance efforts.
+        </p>
+        <p>
+        Another class flagged for violations is App\Game21\Game21, indicating excessive complexity in its code. According to PhpMetrics, 
+        the most complex method in this class has a cyclomatic complexity of 12, surpassing the recommended limit of 10 suggested by PhpMd. 
+        To reduce this complexity, improve testability, and minimize errors, one possible solution is to delegate some responsibilities to 
+        other objects or to split the method into smaller, more manageable parts.
 
+        <figure class="figure">
+        <img alt="PhpMetrics violations before improvements" src="{{ asset('img/metrics/violation1_phpmetr_before.png') }}"
+        style="width: 50%;">
+        <img alt="PhpMetrics violations before improvements" src="{{ asset('img/metrics/violation2_phpmetr_before.png') }}"
+        style="width: 50%;">
+        <figcaption class="fig-caption" style="width: fit-content;">
+        Issues identified in PhpMetrics report before improvements.
+        </figcaption>
+    </figure>
+        </p>
+        <p>
+        In the Violations section, some App\Controller classes are also included. The warning for these classes shows that they are probably bugged. 
+        This may be due to lack of testing. The average cyclomatic complexity per class is 5.81.
+        </p>
+        <br>
+        <figure class="figure">
+            <img alt="Maintainability and Complexity Diagram" src="{{ asset('img/metrics/metrics_before_php.png') }}"
+            style="width: 500px;">
+            <figcaption class="fig-caption">
+                Maintainability and Complexity Diagram
+            </figcaption>
+        </figure>
+
+        <p>
+        The red circles in order of size are 
+         App\Controller\JsonApiController, App\Controller\GameController and App\Controller\DeckOfCards.
+        </p>
+        <p>In summary, the PhpMetrics report shows that it would be good to test more classes. Spending some time to fix errors or warnings related to the violations is also good.</p>
         
         <h2>Scrutinizer</h2>
-    
-        
+        <p>
+        Scrutinizer is a tool used in software development, particularly in conjunction with Git repositories, to analyze and improve code quality. 
+        It provides automated code reviews, examining the code for potential issues such as bugs, security vulnerabilities, code smells, and adherence 
+        to coding standards. By integrating Scrutinizer into a Git repository, developers can receive continuous feedback on their code, ensuring 
+        higher quality and more maintainable software. Scrutinizer's overall points (points lies between 0 (poor) and 10 (very good)),
+        a code coverage percentage score and a flag indicating whether the build failed or passed, code intelligence for my project is given below.
+        </p>
+        <figure class="figure">
+            <img style="width:30%;" alt="Scrutinizer score and badges" src="{{ asset('img/metrics/scrutinizer_before1.png') }}">
+            <figcaption class="fig-caption">
+                Score och badges of Scrutinizer-report.
+            </figcaption>
+        </figure>
+        <p>
+        According to the Scrutinizer, my source code has a quality score 9.84, indicating that the majority of my code is considered high quality.
+        Although it is a very good rating, there is still room for improvement.
+        Like PhpMetrics report, the Scrutinizer report shows several code quality issues as well. 
+        Scrutinizer identifies that there exist best practice violations, potential bugs, unused code, and error in documentation in some of my classes.
+        It is important to fix the identified problems to ensure the program's stability.
+        </p>
+        <p>
+        The second badge from Scrutinizer shows that the code coverage is very low (25%). The code coverage report from PHPUnit shows that 
+        current unit tests cover 34.62% of all functions and methods and 23.11% of all lines of code. So there is a gap between the current test coverage 
+        and the total code. A good code coverage should be at least 70% of the code. Currently, a large part of the codebase 
+        (for example, App\Controller, App\Entity classes ) is not tested. Adding test suites for these classes would significantly 
+        increase code coverage.
+        </p>
+        <figure class="figure">
+        <img style="width:75%;" alt="PhpUnit Coverage" src="{{ asset('img/metrics/coverage_before_php.png') }}">
+        <figcaption class="fig-caption">
+        Code coverage before improvement according to PhpUnit.
+        </figcaption>
+        </figure>
+        <p>
+        Scrutinizer also identifies other weaknesses in the code.
+        According to Scrutinizer, four methods of different classes of App\Controller has rating B. They are the least tested PHP operations with the highest CRAP score. are
+        It is clear that the App\Controller classes need more testing.
+        The checkWinStatus() of App\Game21\Game21 gained rating C which is at the top of the "Worst rated PHP operation" list.
+        </p>
+        <p>The results of the Scrutinizer report coincide with the results of the PhpMetrics report. Both reports shows that, test coverage is low and 
+        there is a need for more unit testing.</p>
+
+        <h2>Improvement</h2>
+        <p>In this section, my plan to improve the code is discussed first. Then the result of the updated PhpMetrics and Scrutinizer reports after implementing the plan is discussed and analyzed.</p>
+        <p>
+        According to the previous PHPMetrics report and scrutinizer report, my plan is to improve the following:
+        <ul>
+        <li>Fix "issues" identified in Scrutinizer</li>
+        <li>Reduce pubic method in JsonApiController class by splitting it into more class</li>
+        <li>Reduce the complexity of the checkWinStatus() method</li>
+        <li>Increase code coverage by creating a test suite for the App\Controller classes</li>
+        </ul>
+        </p>
+        <h3>After improvement</h3>
+        <p>
+        </p>
+
         <h2>Discussion</h2>
         
         </article>

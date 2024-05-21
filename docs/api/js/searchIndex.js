@@ -286,50 +286,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-GameController.html#method_cardDeckDrawNum"
         },                {
-            "fqsen": "\\App\\Controller\\JsonApiController",
-            "name": "JsonApiController",
+            "fqsen": "\\App\\Controller\\JsonApiGameController",
+            "name": "JsonApiGameController",
             "summary": "",
-            "url": "classes/App-Controller-JsonApiController.html"
+            "url": "classes/App-Controller-JsonApiGameController.html"
         },                {
-            "fqsen": "\\App\\Controller\\JsonApiController\u003A\u003AjsonQuote\u0028\u0029",
-            "name": "jsonQuote",
-            "summary": "",
-            "url": "classes/App-Controller-JsonApiController.html#method_jsonQuote"
-        },                {
-            "fqsen": "\\App\\Controller\\JsonApiController\u003A\u003AinitCallback\u0028\u0029",
-            "name": "initCallback",
-            "summary": "",
-            "url": "classes/App-Controller-JsonApiController.html#method_initCallback"
-        },                {
-            "fqsen": "\\App\\Controller\\JsonApiController\u003A\u003AapiDeckGet\u0028\u0029",
-            "name": "apiDeckGet",
-            "summary": "",
-            "url": "classes/App-Controller-JsonApiController.html#method_apiDeckGet"
-        },                {
-            "fqsen": "\\App\\Controller\\JsonApiController\u003A\u003AapiDeckShufflePost\u0028\u0029",
-            "name": "apiDeckShufflePost",
-            "summary": "",
-            "url": "classes/App-Controller-JsonApiController.html#method_apiDeckShufflePost"
-        },                {
-            "fqsen": "\\App\\Controller\\JsonApiController\u003A\u003AapiDeckDrawPost\u0028\u0029",
-            "name": "apiDeckDrawPost",
-            "summary": "",
-            "url": "classes/App-Controller-JsonApiController.html#method_apiDeckDrawPost"
-        },                {
-            "fqsen": "\\App\\Controller\\JsonApiController\u003A\u003AapiDeckDrawNumPost\u0028\u0029",
-            "name": "apiDeckDrawNumPost",
-            "summary": "",
-            "url": "classes/App-Controller-JsonApiController.html#method_apiDeckDrawNumPost"
-        },                {
-            "fqsen": "\\App\\Controller\\JsonApiController\u003A\u003AapiDeckDrawGet\u0028\u0029",
-            "name": "apiDeckDrawGet",
-            "summary": "",
-            "url": "classes/App-Controller-JsonApiController.html#method_apiDeckDrawGet"
-        },                {
-            "fqsen": "\\App\\Controller\\JsonApiController\u003A\u003AapiGame21\u0028\u0029",
+            "fqsen": "\\App\\Controller\\JsonApiGameController\u003A\u003AapiGame21\u0028\u0029",
             "name": "apiGame21",
             "summary": "",
-            "url": "classes/App-Controller-JsonApiController.html#method_apiGame21"
+            "url": "classes/App-Controller-JsonApiGameController.html#method_apiGame21"
         },                {
             "fqsen": "\\App\\Controller\\JsonBookApiController",
             "name": "JsonBookApiController",
@@ -350,6 +315,16 @@ Search.appendIndex(
             "name": "apiBookByISBN",
             "summary": "",
             "url": "classes/App-Controller-JsonBookApiController.html#method_apiBookByISBN"
+        },                {
+            "fqsen": "\\App\\Controller\\MeControllerJson",
+            "name": "MeControllerJson",
+            "summary": "",
+            "url": "classes/App-Controller-MeControllerJson.html"
+        },                {
+            "fqsen": "\\App\\Controller\\MeControllerJson\u003A\u003AjsonQuote\u0028\u0029",
+            "name": "jsonQuote",
+            "summary": "",
+            "url": "classes/App-Controller-MeControllerJson.html#method_jsonQuote"
         },                {
             "fqsen": "\\App\\Controller\\MeControllerTwig",
             "name": "MeControllerTwig",
@@ -390,6 +365,11 @@ Search.appendIndex(
             "name": "metrics",
             "summary": "",
             "url": "classes/App-Controller-MeControllerTwig.html#method_metrics"
+        },                {
+            "fqsen": "\\App\\Controller\\MeControllerTwig\u003A\u003Ametricsv1\u0028\u0029",
+            "name": "metricsv1",
+            "summary": "",
+            "url": "classes/App-Controller-MeControllerTwig.html#method_metricsv1"
         },                {
             "fqsen": "\\App\\Controller\\ProductController",
             "name": "ProductController",
