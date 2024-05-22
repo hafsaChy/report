@@ -40,7 +40,6 @@ class CardHand
 
     public function shuffle(): void
     {
-        // Shuffle the cards array
         shuffle($this->cards);
     }
 
@@ -53,7 +52,7 @@ class CardHand
     }
 
     /**
-     * @var array<int, array<string>> $variable
+     * @return  array<int<0, max>, array<string>>
      */
     public function getValues(): array
     {
