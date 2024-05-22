@@ -9,13 +9,11 @@
         <article class="article">
         <br>
         <p>
-        The code quality of my PHP project is analyzed and disscussed in this report. To get an overview of the quality of the code, I will use the reports from the tools <i>PhpMetrics</i> and <i>Scrutinizer</i>. By defining metrics and identifying weaknesses in the code, I will then implement a series of improvements to raise the quality of the code. Finally, I will generate new reports based on the improved code and evaluate if the scores from PhpMetrics and Scrutinizer have improved. The report concludes with a discussion of clean code and the tools used in the investigation.
-        </p>
+        This report analyzes and discusses the code quality of my PHP project using PhpMetrics and Scrutinizer. Initially, the weaknesses in the code are identified. Subsequently, improvements are implemented to enhance the code quality. A new report is then generated based on the revised code. The report concludes with a discussion on clean code and an overview of the tools used in the analysis.        </p>
 
         <h2>Introduction</h2>
         <p>
-        {# explain the six C's and how they can affect code quality. Exemplify, where appropriate, some metrics associated with your own code and provide a brief explanation of the metric as it relates to code quality. #}
-            In this survey, the code quality according to six C's of code quality are assessed. The six C's and how they can affect code quality are disscussed in this section.
+        This section of the report assesses code quality based on the six C's of code quality. It also discusses how each of these six C's can influence overall code quality.
         </p>
 
         <h4>1. Code style</h4>
@@ -162,16 +160,82 @@
         According to the previous PHPMetrics report and scrutinizer report, my plan is to improve the following:
         <ul>
         <li>Fix "issues" identified in Scrutinizer</li>
-        <li>Reduce pubic method in JsonApiController class by splitting it into more class</li>
+        <li>Reduce LCOM and pubic method in JsonApiController class by splitting it into more class</li>
         <li>Reduce the complexity of the checkWinStatus() method</li>
         <li>Increase code coverage by creating a test suite for the App\Controller classes</li>
         </ul>
         </p>
         <h3>After improvement</h3>
         <p>
+        During improvement, I first focused on fixing the issues that arose in Scrutinizer. I was able to fix almost all of the issues.
+        There is a isuue on Kernel class. The Kernel class is responsible for starting the application, handling requests, and managing the execution flow. I did not focus on this issue, because it requires more knowledge. 
+        The following figures show the issues before and after improvement respectively. 
         </p>
+        <figure class="figure">
+            <img alt="Issues before improvements" src="{{ asset('img/metrics/scrutinizer_issues_before.png') }}"
+            style="width: 40%;">
+            <figcaption class="fig-caption">
+                Scrutinizer's issues before improvements
+            </figcaption>
+        </figure>
+        <br>
+        <figure class="figure">
+            <img alt="Issues after improvements" src="{{ asset('img/metrics/scrutinizer_issue_fixed.png') }}"
+            style="width: 30%;">
+            <figcaption class="fig-caption">
+                Scrutinizer's issues after improvements
+            </figcaption>
+        </figure>
 
+        <p>
+        The next improvement I did was dividing the JsonApiController class into three classes. 
+        The number of public methods is reduced by doing this.
+        </p>
+        <p>The third improvement is done by creating a private method as a helper method of checkWinStatus().
+        The following figure shows the improvement.
+        </p>
+        <figure class="figure">
+            <img alt="improvement of checkWinStatus" src="{{ asset('img/metrics/scrutinizer_after.png') }}"
+            style="width: 30%;">
+            <figcaption class="fig-caption">
+                Improvement of checkWinStatus
+            </figcaption>
+        </figure>
+        <p>The last improvement I planned is done a little. I added more tests for Entity class.
+        The improvement of this part is shown in the following figure.</P>
+        <figure class="figure">
+            <img style="width:75%;" alt="PhpUnit Coverage after improvement" src="{{ asset('img/metrics/coverage_phpunit_after.png') }}">
+            <figcaption class="fig-caption">
+            Code coverage after improvement according to PhpUnit.
+            </figcaption>
+        </figure>
+
+        <p>The new score of scrutinizer is 9.89. The badges are:
+        <img alt="Scrutinizer badge" src="https://scrutinizer-ci.com/g/hafsaChy/report/badges/quality-score.png?b=main">
+        <img alt="Coverage badge" src="https://scrutinizer-ci.com/g/hafsaChy/report/badges/coverage.png?b=main">
+        <img alt="build badge" src="https://scrutinizer-ci.com/g/hafsaChy/report/badges/build.png?b=main">
+        <img alt="code intelligence badge" src="https://scrutinizer-ci.com/g/hafsaChy/report/badges/code-intelligence.svg?b=main">
+        . Follwing figure shows the current score and badges.</p>
+        <figure class="figure">
+            <img alt="Scrutinizer current score and badge" src="{{ asset('img/metrics/scrutinizer_badge_after.png') }}"
+            style="width: 30%">
+            <figcaption class="fig-caption">
+                Scrutinizer current score and badge
+            </figcaption>
+        </figure>
         <h2>Discussion</h2>
+        <p>
+        Utilizing tools like PhpMetrics and Scrutinizer simplifies the process of analyzing source code, gaining insights 
+        into its quality, and pinpointing areas needing improvement. PhpMetrics offers a detailed view of various code quality 
+        aspects, including complexity, dependencies, violations, and code coverage. Scrutinizer provides comprehensive code analysis. 
+        Additionally, tools such as PHP-CS-Fixer, PhpMd, and PhpStan help uphold a standardized code base and promote best practices 
+        by identifying deviations from established code standards and principles. In my experience, using these tools resulted in more 
+        readable and potentially more maintainable code in my project.
+        </p>
+        <p>
+        In summary, integrating tools like PHPMetrics and Scrutinizer with additional resources such as PHP-CS-Fixer, PhpMd, 
+        and PhpStan, along with implementing unit testing using PhpUnit, creates a robust framework for achieving "clean code" and enhancing code quality.
+        </p>
         
         </article>
     </div>
