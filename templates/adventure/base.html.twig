@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}My Adventure Game{% endblock %}</title>
+        <link rel="icon" href="{{ asset('img/adventure/pizza.jpg') }}">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body class="proj-body">
+    {% block body %}{% endblock %}
+    </body>
+</html>

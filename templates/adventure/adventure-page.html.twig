@@ -1,0 +1,28 @@
+{% extends "adventure/base.html.twig" %}
+
+{% block title %}Adventure Game{% endblock %}
+
+{% block body %}
+<div class="proj-sidebar">
+        <header class="proj-header">
+            <span class="proj-title">
+            <a href="{{ path('proj_home') }}">
+                <img src="{{ asset('img/adventure/pizza.jpg') }}" alt="pizza image">
+            </a>
+            </span>
+            <nav class="proj-nav">
+                <ul>
+                    <li><a class="proj-navlink" href="{{ path('proj_home') }}">Home</a></li>
+                    <li><a class="proj-navlink" href="{{ path('proj_about') }}">About</a></li>
+                    <li><a class="proj-navlink" href="{{ path('proj_api') }}">API</a></li>
+                </ul>
+            </nav>
+        </header>
+        <footer class="proj-footer">
+            <p>&copy; Hafsa Choudhury 2024</p>
+        </footer>
+        </div>
+        <main class="proj-main">
+        {% block main %}{% endblock %}
+        </main>
+{% endblock %}

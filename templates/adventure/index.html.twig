@@ -1,0 +1,22 @@
+{% extends "adventure/adventure-page.html.twig" %}
+
+{% block main %}
+    <h1>Bake pizza</h1>
+
+    <h2>Welcome to the adventure game!</h2>
+    <p>
+        <b>Bake pizza</b> is a cozy adventure game. This game is inspired by classic/text-based adventure games.
+        Here, a player can explore different places and gather items in a basket.
+        The goal of the game is to gather all the needed ingredients for baking pizza.
+        Nine ingredients are needed to bake the pizza, which can be found in four different places.
+    </p>
+    <p>
+        You can choose to challenge yourself and play without any recipe. Otherwise, follow 
+        <a class="proj-link" href="{{ path('proj_cheatsheet') }}" target="_blank">this recipe</a> and play!
+    </p>
+    <p>
+        Good luck!
+    <p>
+    <p>Button to start the game</p>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "adventure/adventure-page.html.twig" %}
+
+{% block main %}
+    <h1>Bake a delicious pizza</h1>
+
+    <p>
+        Follow this recipe step by step and bake the delicious pizza. Right now you are in the kitchen.
+    </p>
+
+    <p>First, from the kitchen, go to the garden...</p>
+    <ul>
+        <li>go south</li>
+        <ul>
+            <li>pick up tomato</li>
+            <li>pick up capsicum</li>
+        </ul>
+    </ul>
+    <p> Then go the farm...</p>
+    <ul>
+        <li>go east</li>
+        <ul>
+            <li>pick up chicken</li>
+            <li>pick up cheese</li>
+            <li>pick up shrimp</li>
+        </ul>
+    </ul>
+    <p> Next, go to the pantry...</p>
+    <ul>
+        <li>go north</li>
+        <ul>           
+            <li>pick up flour</li>
+            <li>pick up salt</li>
+            <li>pick up yeast</li>
+        </ul>
+    </ul>
+    <p>Great! You have gathered all ingredients needed to bake a delicious pizza!</p>
+    <p> Now go back to the kitchen and pick up warm water and bake the pizza...</p>
+    <ul>
+        <li>go west</li>
+        <ul>
+            <li>pick up warm water</li>
+            <li>bake pizza</li>
+        </ul>
+    </ul>
+
+    <p>Congratulations! You made it! </p>
+
+{% endblock %}
