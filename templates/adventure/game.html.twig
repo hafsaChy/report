@@ -1,0 +1,72 @@
+{% extends "adventure/base.html.twig" %}
+
+{% block title %}Bake pizza{% endblock %}
+
+{% block body %}
+    <div class="proj-room">
+    {% if gameEnd %}
+    <img class="proj-img" src="{{ asset('img/adventure/kitchen.jpeg') }}" alt="{{ place }}">
+    {% else %}
+    <img class="proj-img" src="{{ asset('img/adventure/') }}{{image}}" alt="{{ place }}">
+    {% endif %}
+    </div>
+    <div class="proj-center">{{ place }}</div>
+
+    <div class="proj-basket" title="Your Basket">
+        {% for i in 0..8 %}
+            {% if basket[i] is defined %}
+            <div class="proj-polaroid"><img alt="item{{i}}" src="{{ asset('img/adventure/') }}{{basket[i]}}"></div>
+            {% else %}
+            <div id="item{{ i }}" class="proj-polaroid"></div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <span class="proj-basket-label">Your Basket</span>
+    <div class="proj-text">
+        {% if action %}
+        <p>
+            {{ action }}
+        <p>
+            {% if gameEnd %}
+            <img style="width: 150px; height: 150px;" src="{{ asset('img/adventure/pizza.jpg') }}" alt="pizza">
+            {% else %}
+            <p class="proj-animation">
+                What do you want to do next?
+            </p>
+            {% endif %}
+        {% else %}
+        <p>
+            {{ description }}
+        </p>
+        <p>
+            {{ directions }}
+        </p>
+        <p class="proj-animation">
+            What do you want to do next?
+        </p>
+        {% endif %}
+
+    </div>
+    <footer class="proj-gamebar">
+        <p>Adventure game</p>
+        {% if not gameEnd %}
+        <form class="proj-form" action="{{ path('proj_game_input') }}" method="POST">
+            <select class="proj-select" name="action" style="">
+                <option value="" disabled>Choose your action</option>
+                {% for option in options %}
+                <option value="{{option}}">{{option}}</option>
+                {% endfor %}
+            </select>
+            <select class="proj-select" name="input" style="">
+                <option value="some" disabled>Choose your option</option>
+                    {% for option in selectOptions %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+            </select>
+            {# <input class="proj-input" type="text" name="input" placeholder="write input"> #}
+            <input class="button" type="submit" value="OK">
+        </form>
+        {% endif %}
+        <a class="proj-button proj-button-return" href="{{ path('proj_home') }}">&#10005;</a>
+    </footer>
+{% endblock %}

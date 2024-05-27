@@ -98,8 +98,8 @@
         ],
         "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit",
         "phpdoc": "tools/phpdoc/phpdoc --config=tools/phpdoc/phpdoc.xml",
-        "metrics": "tools/phpmetrics/vendor/bin/phpmetrics --config=tools/phpmetrics/phpmetrics.json"
-
+        "metrics": "tools/phpmetrics/vendor/bin/phpmetrics --config=tools/phpmetrics/phpmetrics.json",
+        "importcsv": "php bin/console csv:import"
     },
     "conflict": {
         "symfony/symfony": "*"

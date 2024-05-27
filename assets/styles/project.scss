@@ -68,16 +68,18 @@ $cursive: 'Amatic SC', cursive;
 .proj-navlink {
     text-decoration: none;
     font-size: $base-font-size * 2;
-    color: #fff;
+    // color: #0e0c0c;
+    transition: width 2s;
 }
 
-.proj-navlink:hover {
-    font-style: bold;
-}
+// .proj-navlink:hover {
+//     font-style: $sans-serif;
+//     width: 100px;
+// }
 
-.proj-navlink:visited {
-    color: #fff;
-}
+// .proj-navlink:visited {
+//     color: #fff;
+// }
 
 .proj-main {
     margin: 0 15px 0 200px;
@@ -98,14 +100,13 @@ $cursive: 'Amatic SC', cursive;
 
 .proj-link {
     text-decoration: none;
-    // font-variant: small-caps;
     font-weight: 600;
-    color: rgb(34, 116, 154);
+    color: #22749a;
 }
 
 .proj-link:hover {
     font-style: bold;
-    border-bottom: 1px solid #1d2f6f;
+    border-bottom: darken(#22749a, 20%);
 }
 
 .proj-link:visited {
@@ -116,4 +117,185 @@ $cursive: 'Amatic SC', cursive;
 .proj-footer {
     border: none;
     font-family: $sans-serif;
+}
+
+.home-page {
+    margin: 150px;
+}
+
+.cheatsheet-page {
+    margin: 50px 150px;
+}
+
+.proj-button {
+    margin: 1rem 0;
+    padding: 0.8rem 0.9rem;
+    height: fit-content;
+    width: 100%;
+    box-sizing: border-box;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    background-color: blue;
+    color: #0d0c0c;
+    font-size: $base-font-size * 1.2;
+    border-radius: 10px;
+}
+
+.proj-start {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    display: block;
+    margin-bottom: 0;
+}
+
+.proj-button:hover {
+    background-color: darken(blue, 10%);
+}
+
+.proj-button:visited {
+    color: white;
+}
+
+.proj-room {
+    background-color: #c1b93f;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    opacity: 0.8;
+}
+
+.proj-img{
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    opacity: 1;
+}
+
+.proj-basket {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 150px;
+    background-color: #fac748;
+
+    div {
+        padding: 0.5rem;
+        height: 100%;
+        width: 31%;
+        background-color: #f9e9ec;
+        border: 2px solid #fac748;
+    }
+
+    div img {
+        height: inherit;
+        width: 100%;
+    }
+}
+
+.proj-basket-label {
+    display: block;
+    margin: 0;
+    padding: 0.2rem 0.6rem;
+    background-color: #fac748;
+    font-family: $cursive;
+    font-weight: bold;
+    text-align: right;
+}
+
+.proj-text {
+    margin: 1rem auto 300px;
+    width: 80%;
+    font-family: $sans-serif;
+    text-align: center;
+    overflow: auto;
+}
+
+.proj-polaroid {
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 #00000033, 0 6px 20px 0 #00000030;
+    margin-bottom: 25px;
+}
+
+.proj-center {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.proj-button-return {
+    width: 5%;
+}
+
+.proj-animation {
+    width: 250px;
+    margin-left: 37%;
+    position: relative;
+    height: 35px;
+    background-color: #ebe5b5ea;
+    animation-name: proj-animatn;
+    animation-duration: 5s;
+    border-radius: 5px;
+    }
+      
+@keyframes proj-animatn {
+    from {background-color: #ebe5b5ea;}
+    to {background-color: darken(#ebe5b5ea, 50%);}
+}
+
+
+.proj-gamebar {
+    margin: 0;
+    padding: 0.2rem 1rem;
+    width: 100%;
+    height: fit-content;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    background-image: linear-gradient(yellow, red);
+    p {
+        font-family: $cursive;
+        font-size: $base-font-size * 2;
+    }
+}
+
+.proj-form {
+    margin: 0;
+    padding-top: 0.5rem;
+
+    * {
+        height: 45px;
+    }
+}
+
+.proj-input,
+.proj-select {
+    margin: 0;
+    padding: 0.4rem 0.6rem;
+    font-family: $sans-serif;
+    border: 1px solid #f9e9ec;
+    border-radius: 0.2rem;
+    box-sizing: border-box;
+}
+
+.proj-select {
+    font-variant: small-caps;
+    text-align: center;
+    min-width: fit-content;
+}
+
+.proj-input {
+    min-width: 200px;
+}
+
+.proj-input:focus {
+    outline: #fac748;
 }

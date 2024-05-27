@@ -1,6 +1,7 @@
 {% extends "adventure/adventure-page.html.twig" %}
 
 {% block main %}
+    <div class="home-page">
     <h1>Bake pizza</h1>
 
     <h2>Welcome to the adventure game!</h2>
@@ -17,6 +18,7 @@
     <p>
         Good luck!
     <p>
-    <p>Button to start the game</p>
-
+    <br>
+    <a class="proj-button proj-start" href="{{ path('proj_init_game') }}">Play</a>
+    </div>
 {% endblock %}
