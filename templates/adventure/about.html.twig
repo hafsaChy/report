@@ -1,7 +1,31 @@
 {% extends "adventure/adventure-page.html.twig" %}
 
 {% block main %}
+    <div class="about-page">
+
     <h1>About</h1>
 
-    <p>About this project</p>
+    <p>
+    This web application is developed as part of the course 'Objektorienterade webbteknologier' 
+    (<a class="proj-link" href="https://dbwebb.se/kurser/mvc-v2">MVC</a>) 
+    at Blekinge Tekniska Högskolan. The adventure game 'Bake Pizza' is created for the final project 
+    (<a class="proj-link" href="https://dbwebb.se/kurser/mvc-v2/kmom10">kmom10</a>) of the course.
+    </p>
+    <br>
+    <h2>Game</h2>
+    <p>
+        In the game 'Bake Pizza', players navigate through four rooms—kitchen, pantry, garden, and farm—by 
+        moving 'north', 'east', 'south', or 'west'. Instead of a typical backpack, players collect items in 
+        a basket that can hold up to nine items. The objective is to explore each room, gather the nine necessary 
+        ingredients for baking a pizza, and return to the kitchen to bake the pizza and complete the game. 
+        A cheatsheet for the game is provided <a class="proj-link" href="{{ path('proj_cheatsheet') }}" target="_blank">here</a>.
+    </p>
+    <br>
+    <h2>Database</h2>
+    <p>
+        Two database tables are also designed to store information about the rooms and items. The database details is available 
+        <a class="proj-link" href="{{ path('proj_about_db') }}">here</a>.
+    </p>
+    <br>
+    </div>
 {% endblock %}

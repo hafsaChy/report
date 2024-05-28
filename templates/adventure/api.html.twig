@@ -1,7 +1,69 @@
 {% extends "adventure/adventure-page.html.twig" %}
 
 {% block main %}
-    <h1>API</h1>
+    <h1>Adventure Game API</h1>
 
-    <p>On this page you can find all JSON routes for this project.</p>
+    <div class="proj-api">
+    <h2>Room with Items</h2>
+        <p>This route takes you to a page that displays a JSON object of Room including the items containing at that room.</p>
+        <form action="{{ path('proj_room_item') }}" method="get">
+            <button class="proj-api-button proj-button" type="submit">Items in the current room</button>
+        </form>
+    </div>
+    <br>
+
+    <div class="proj-api">
+    <h2>Directions</h2>
+        <p>This route takes you to a page that displays a JSON object of available directions from the current room.</p>
+        <form action="{{ path('proj_directions') }}" method="get">
+            <button class="proj-api-button proj-button" type="submit">Available directions frm the current room</button>
+        </form>
+    </div>
+    <br>
+    <div class="proj-api">
+    <h2>Available actions</h2>
+        <p>This route takes you to a page that displays a JSON object of available actions.</p>
+        <form action="{{ path('proj_actions') }}" method="get">
+            <button class="proj-api-button proj-button" type="submit">Available actions</button>
+        </form>
+    </div>
+    <br>
+    <div class="proj-api">
+    <h2>Basket</h2>
+        <p>This route takes you to a page that displays a JSON object of available items in the basket.</p>
+        <form action="{{ path('proj_basket') }}" method="get">
+            <button class="proj-api-button proj-button" type="submit">Available items in the basket</button>
+        </form>
+    </div>
+    <br>
+    <div class="proj-api">
+    <h2>Visited rooms</h2>
+        <p>This route takes you to a page that displays a JSON object of visited rooms.</p>
+        <form action="{{ path('proj_visited') }}" method="get">
+            <button class="proj-api-button proj-button" type="submit">Visited rooms</button>
+        </form>
+    </div>
+    <br>
+    <div class="proj-api">
+    <h2>Inspect</h2>
+        <p>This route takes you to a page that displays a JSON object with inspection result.</p>
+        <form id="inspect" action="{{ path('proj_inspect') }}" method="post">
+        <label for="inspect">Inspect:</label>
+        <input type="text" id="inspect" name="input" required>
+        <button type="submit">OK</button>
+    </form>
+    <br>
+    </div>
+    <br>
+    {# <div class="proj-api">
+    <p>This route takes you to a page that displays a JSON object of new room with items after moving.</p>
+    <h2>Move</h2>
+    <div id="go">
+        <form id="goForm" action="{{ path('proj_go') }}" method="post">
+            <label for="goInput">Move to:</label>
+            <input type="text" id="goInput" name="direction" required>
+            <button  class="proj-button" type="submit">OK</button>
+        </form>
+    </div>
+    </div> #}
 {% endblock %}
