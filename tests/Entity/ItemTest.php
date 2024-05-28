@@ -10,7 +10,7 @@ class ItemTest extends TestCase
     /**
      * Test setting and getting the name
      */
-    public function testSetName(): void
+    public function testSetGetName(): void
     {
         $item = new Item();
         $name = 'Rice';
@@ -23,7 +23,7 @@ class ItemTest extends TestCase
     /**
      * Test setting and getting the description
      */
-    public function testSetDescription(): void
+    public function testSetGetDescription(): void
     {
         $item = new Item();
         $description = 'A packet of 5 kilograms rice';
@@ -36,7 +36,7 @@ class ItemTest extends TestCase
     /**
      * Test setting and getting the image
      */
-    public function testSetImage(): void
+    public function testSetGetImage(): void
     {
         $item = new Item();
         $image = 'rice.jpeg';
@@ -49,7 +49,7 @@ class ItemTest extends TestCase
     /**
      * Test setting and getting the room
      */
-    public function testSetRoom(): void
+    public function testSetGetRoom(): void
     {
         $item = new Item();
         $room = 'Store room';
@@ -62,7 +62,7 @@ class ItemTest extends TestCase
     /**
      * Test setting and getting the id
      */
-    public function testGetId(): void
+    public function testSetGetId(): void
     {
         $item = new Item();
 

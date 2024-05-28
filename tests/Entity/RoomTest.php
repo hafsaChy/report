@@ -10,7 +10,7 @@ class RoomTest extends TestCase
     /**
      * Test setting and getting the name
      */
-    public function testSetName(): void
+    public function testSetGetName(): void
     {
         $room = new Room();
         $name = 'Library';
@@ -23,7 +23,7 @@ class RoomTest extends TestCase
     /**
      * Test setting and getting the description
      */
-    public function testSetDescription(): void
+    public function testSetGetDescription(): void
     {
         $room = new Room();
         $description = 'A quiet place with many books.';
@@ -36,7 +36,7 @@ class RoomTest extends TestCase
     /**
      * Test setting and getting the image
      */
-    public function testSetImage(): void
+    public function testSetGetImage(): void
     {
         $room = new Room();
         $image = 'library.jpg';
@@ -49,7 +49,7 @@ class RoomTest extends TestCase
     /**
      * Test setting and getting the north direction
      */
-    public function testSetNorth(): void
+    public function testSetGetNorth(): void
     {
         $room = new Room();
         $north = 'Garden';
@@ -62,7 +62,7 @@ class RoomTest extends TestCase
     /**
      * Test setting and getting the south direction
      */
-    public function testSetSouth(): void
+    public function testSetGetSouth(): void
     {
         $room = new Room();
         $south = 'Kitchen';
@@ -75,7 +75,7 @@ class RoomTest extends TestCase
     /**
      * Test setting and getting the east direction
      */
-    public function testSetEast(): void
+    public function testSetGetEast(): void
     {
         $room = new Room();
         $east = 'Dining Room';
@@ -88,7 +88,7 @@ class RoomTest extends TestCase
     /**
      * Test setting and getting the west direction
      */
-    public function testSetWest(): void
+    public function testSetGetWest(): void
     {
         $room = new Room();
         $west = 'Living Room';
@@ -101,7 +101,7 @@ class RoomTest extends TestCase
     /**
      * Test setting and getting the inspect description
      */
-    public function testSetInspect(): void
+    public function testSetGetInspect(): void
     {
         $room = new Room();
         $inspect = 'The room is filled with ancient artifacts.';
@@ -114,7 +114,7 @@ class RoomTest extends TestCase
     /**
      * Test setting and getting the id
      */
-    public function testGetId(): void
+    public function testSetGetId(): void
     {
         $room = new Room();
 
