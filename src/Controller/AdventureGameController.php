@@ -15,11 +15,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AdventureGameController extends AbstractController
 {
-    #[Route('/proj', name: 'proj_home')]
-    public function projectHome(): Response
-    {
-        return $this->render('adventure/index.html.twig');
-    }
+    // #[Route('/proj', name: 'proj_home')]
+    // public function projectHome(): Response
+    // {
+    //     return $this->render('adventure/index.html.twig');
+    // }
 
     #[Route('/proj/init/game', name: 'proj_init_game')]
     public function projectInitGame(
@@ -105,7 +105,7 @@ class AdventureGameController extends AbstractController
         $game = $session->get("adventure");
         assert($game instanceof Game);
         $action = (string) $request->request->get('action');
-        $selectOptions = (string) $request->request->get('selectOptions');
+        // $selectOptions = (string) $request->request->get('selectOptions');
 
         $input = (string) $request->request->get('input');
         $cleanedInput = strtolower(trim($input));
@@ -277,21 +277,21 @@ class AdventureGameController extends AbstractController
         return $this->redirectToRoute('proj_game');
     }
 
-    #[Route('/proj/about', name: 'proj_about')]
-    public function projectAbout(): Response
-    {
-        return $this->render('adventure/about.html.twig');
-    }
+    // #[Route('/proj/about', name: 'proj_about')]
+    // public function projectAbout(): Response
+    // {
+    //     return $this->render('adventure/about.html.twig');
+    // }
 
-    #[Route('/proj/about/database', name: 'proj_about_db')]
-    public function projectAboutDb(): Response
-    {
-        return $this->render('adventure/database.html.twig');
-    }
-    
-    #[Route('/proj/bakepizza', name: 'proj_cheatsheet')]
-    public function projectCheat(): Response
-    {
-        return $this->render('adventure/bake-cheatsheet.html.twig');
-    }
+    // #[Route('/proj/about/database', name: 'proj_about_db')]
+    // public function projectAboutDb(): Response
+    // {
+    //     return $this->render('adventure/database.html.twig');
+    // }
+
+    // #[Route('/proj/bakepizza', name: 'proj_cheatsheet')]
+    // public function projectCheat(): Response
+    // {
+    //     return $this->render('adventure/bake-cheatsheet.html.twig');
+    // }
 }

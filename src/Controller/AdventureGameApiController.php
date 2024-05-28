@@ -34,13 +34,12 @@ class AdventureGameApiController extends AdventureGameController
             return new JsonResponse(['message' => 'Game session not found.'], Response::HTTP_NOT_FOUND);
         }
 
-        if ($game) {
-            assert($game instanceof Game);
-            $currentRoom = $game->getCurrentRoom();
-            assert($currentRoom instanceof Room);
-            $data["currentRoom"] = $currentRoom->getName();
-            $data["ItemsInRoom"] = $game->getCurrentRoomItems();
-        }
+        assert($game instanceof Game);
+        $currentRoom = $game->getCurrentRoom();
+        assert($currentRoom instanceof Room);
+        $data["currentRoom"] = $currentRoom->getName();
+        $data["ItemsInRoom"] = $game->getCurrentRoomItems();
+
 
         $response = new JsonResponse($data);
         $response->setEncodingOptions(
@@ -58,8 +57,9 @@ class AdventureGameApiController extends AdventureGameController
             "directions" => ""
         ];
 
+        /** @var Game|null $game */
         $game = $session->get("adventure");
-        
+
         if (!$game) {
             return new JsonResponse(['message' => 'Game session not found.'], Response::HTTP_NOT_FOUND);
         }
@@ -115,22 +115,38 @@ class AdventureGameApiController extends AdventureGameController
 
         $room = $roomRepository->findOneBy(['name' => $cleanedInput]);
 
+        // if ($room) {
+        //     assert($room instanceof Room);
+        //     $data["description"] = $room->getInspect();
+        //     error_log("Room found: " . $room->getName());
+        // } else {
+        //     $item = $itemsRepository->findOneBy(['name' => $cleanedInput]);
+
+        //     if ($item) {
+        //         assert($item instanceof Item);
+        //         $data["description"] = $item->getDescription();
+        //         error_log("Item found: " . $item->getName());
+        //     } else {
+        //         $data["description"] = "Object not found.";
+        //         error_log("Object not found for input: " . $cleanedInput);
+        //     }
+        // }
+
         if ($room) {
             assert($room instanceof Room);
             $data["description"] = $room->getInspect();
             error_log("Room found: " . $room->getName());
-        } else {
-            $item = $itemsRepository->findOneBy(['name' => $cleanedInput]);
-
-            if ($item) {
-                assert($item instanceof Item);
-                $data["description"] = $item->getDescription();
-                error_log("Item found: " . $item->getName());
-            } else {
-                $data["description"] = "Object not found.";
-                error_log("Object not found for input: " . $cleanedInput);
-            }
         }
+        $item = $itemsRepository->findOneBy(['name' => $cleanedInput]);
+
+        if ($item) {
+            assert($item instanceof Item);
+            $data["description"] = $item->getDescription();
+            error_log("Item found: " . $item->getName());
+        }
+
+        $data["description"] = "Object not found.";
+
 
         $response = new JsonResponse($data);
         $response->setEncodingOptions(
@@ -151,14 +167,12 @@ class AdventureGameApiController extends AdventureGameController
             return new JsonResponse(['message' => 'Game session not found.'], Response::HTTP_NOT_FOUND);
         }
 
-        if ($game) {
-            assert($game instanceof Game);
-            $basket = $game->getBasket();
+        assert($game instanceof Game);
+        $basket = $game->getBasket();
 
-            foreach ($basket as $item) {
-                assert($item instanceof Item);
-                array_push($data["basket"], $item->getName());
-            }
+        foreach ($basket as $item) {
+            assert($item instanceof Item);
+            array_push($data["basket"], $item->getName());
         }
 
         $response = new JsonResponse($data);
@@ -194,10 +208,10 @@ class AdventureGameApiController extends AdventureGameController
     // {
     //     $direction = (string) $request->request->get('direction');
     //     $cleanedDirection = strtolower(trim($direction));
-        
+
     //     // $direction = $request->request->get('direction');
     //     $game = $session->get('adventure');
-        
+
     //     if(!$game) {
     //         return new JsonResponse(['message' => 'Game session not found.'], Response::HTTP_NOT_FOUND);
     //     }
@@ -208,7 +222,7 @@ class AdventureGameApiController extends AdventureGameController
 
     //     $newRoomName = $game->getLocationOfDirection($direction);
     //     $newRoom = $roomRepository->findOneBy(['name' => $newRoomName]);
-        
+
     //     if(!$newRoom) {
     //         return new JsonResponse(['message' => 'New room not found.'], Response::HTTP_NOT_FOUND);
     //     }

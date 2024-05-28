@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Command;
 
 use App\Entity\Item;
@@ -54,12 +55,17 @@ class ImportCsv extends Command
         $io->success('Import successful!');
         return Command::SUCCESS;
     }
-
+    /**
+     * Imports data from a CSV file and persists entities to the database.
+     *
+     * @param string $filePath Path to the CSV file.
+     * @param string $entityClass The entity class to instantiate.
+     * @param string[] $fields An array of setter methods to call on the entity.
+     */
     private function importCsv(string $filePath, string $entityClass, array $fields): void
     {
-        if (($handle = fopen($filePath, 'r')) !== false) {
-            $header = fgetcsv($handle); // Skip the header may be
-
+        $handle = fopen($filePath, 'r');
+        if ($handle !== false) {
             while (($row = fgetcsv($handle)) !== false) {
                 $entity = new $entityClass();
                 foreach ($fields as $index => $setter) {

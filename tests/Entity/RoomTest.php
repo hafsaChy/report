@@ -4,6 +4,7 @@ namespace App\Tests\Entity;
 
 use App\Entity\Room;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 class RoomTest extends TestCase
 {
@@ -118,7 +119,7 @@ class RoomTest extends TestCase
     {
         $room = new Room();
 
-        $reflection = new \ReflectionClass($room);
+        $reflection = new ReflectionClass($room);
         $property = $reflection->getProperty('id');
         $property->setAccessible(true);
         $property->setValue($room, 1);

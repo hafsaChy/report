@@ -4,6 +4,7 @@ namespace App\Tests\Entity;
 
 use App\Entity\Item;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 class ItemTest extends TestCase
 {
@@ -66,7 +67,7 @@ class ItemTest extends TestCase
     {
         $item = new Item();
 
-        $reflection = new \ReflectionClass($item);
+        $reflection = new ReflectionClass($item);
         $property = $reflection->getProperty('id');
         $property->setAccessible(true);
         $property->setValue($item, 1);

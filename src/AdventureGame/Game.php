@@ -127,8 +127,8 @@ class Game
             $lastDirection = array_pop($strings);
             $message .= implode(", ", $strings);
             $message .= ", or {$lastDirection}.";
-        } else {
-            $message .= $strings[0] . ".";
+        } elseif (count($strings) === 1) {
+            $message .= " " . $strings[0] . ".";
         }
 
         return $message;
