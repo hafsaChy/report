@@ -102,7 +102,7 @@ class Game
         return $this->visited;
     }
 
-    
+
     /**
      * This method generates a string listing all the possible directions from the current location.
      * @return string
@@ -111,13 +111,13 @@ class Game
     {
         $message = "From here you can go ";
         $directions = $this->getDirections();
-        
+
         if (count($directions) === 0) {
             return $message . "nowhere.";
         }
-        
+
         $strings = [];
-        
+
         foreach ($directions as $direction) {
             $locationName = $this->getLocationOfDirection($direction);
             $strings[] = "{$direction} to the {$locationName}";
@@ -224,14 +224,14 @@ class Game
     public function getOptions()
     {
         $options = [
-            "kitchen", "pantry", "garden", "farm", "flour", 
+            "kitchen", "pantry", "garden", "farm", "flour",
             "pizza sauce","yeast", "salt", "south", "north",
             "east", "west","pizza", "chicken pizza", "tomato",
             "ketchup", "pizza sauce", "chicken", "cheese", "eggs",
             "warm water", "cold water", "shrimp", "sugar", "curry",
             "jam", "vanilla", "cookies", "capsicum", "coriander"
         ];
-    
+
         return $options;
     }
 
@@ -253,7 +253,7 @@ class Game
             "flour"
         ];
 
-        $ingredientsInBasket = array_map(function($item) {
+        $ingredientsInBasket = array_map(function ($item) {
             return $item->getName();
         }, $this->basket);
 
