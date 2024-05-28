@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1716918842">
-  <project timestamp="1716918842">
+<coverage generated="1716919460">
+  <project timestamp="1716919460">
     <file name="/home/hafsa/dbwebb-kurser/mvc/me/report/src/AdventureGame/Game.php">
       <class name="App\AdventureGame\Game" namespace="global">
         <metrics complexity="52" methods="17" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="133" coveredstatements="128" elements="150" coveredelements="143"/>
@@ -176,11 +176,11 @@
       <line num="53" type="method" name="convertCardNumberToString" visibility="protected" complexity="5" crap="5" count="36"/>
       <line num="55" type="stmt" count="36"/>
       <line num="57" type="stmt" count="36"/>
-      <line num="58" type="stmt" count="24"/>
+      <line num="58" type="stmt" count="22"/>
       <line num="61" type="stmt" count="36"/>
       <line num="62" type="stmt" count="21"/>
       <line num="65" type="stmt" count="36"/>
-      <line num="66" type="stmt" count="24"/>
+      <line num="66" type="stmt" count="23"/>
       <line num="69" type="stmt" count="36"/>
       <line num="70" type="stmt" count="23"/>
       <line num="73" type="stmt" count="36"/>
