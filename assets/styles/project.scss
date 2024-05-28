@@ -123,6 +123,10 @@ $cursive: 'Amatic SC', cursive;
     margin: 150px;
 }
 
+.about-page {
+    margin: 100px;
+}
+
 .cheatsheet-page {
     margin: 50px 150px;
 }
@@ -298,4 +302,13 @@ $cursive: 'Amatic SC', cursive;
 
 .proj-input:focus {
     outline: #fac748;
+}
+
+.proj-api {
+    background-color: #f8d5b6;
+    padding: 2%;
+}
+
+.proj-api-button {
+    width: 25%; 
 }
