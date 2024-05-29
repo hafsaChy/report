@@ -40,7 +40,7 @@ composer phpstan
 
 ### Unit testing with PHPUnit
 
-The unit testing framework PHPUnit is used foe unit test. To execute the tests, run ```composer phpunit```.
+The unit testing framework PHPUnit is used for unit test. To execute the tests, run ```composer phpunit```.
 
 ### PhpMetrics and PhpDoc
 
@@ -49,6 +49,6 @@ PhpMetrics is a tool that reads the source code and creates a report containing 
 
 ### Scrutinizer
 
-Scrutinizer is a continuous integration (CI) service that checks out the code on every update of GitHub repo, executes the test suite and to analyzes the code. Floowing badges are from the latest update og my repo:
+Scrutinizer is a CI service that checks out the code on every update of GitHub repo, executes the test suite and analyzes the code. Following badges are from the latest update of my repo:
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/hafsaChy/report/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/hafsaChy/report/?branch=main) [![Code Coverage](https://scrutinizer-ci.com/g/hafsaChy/report/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/hafsaChy/report/?branch=main) [![Build Status](https://scrutinizer-ci.com/g/hafsaChy/report/badges/build.png?b=main)](https://scrutinizer-ci.com/g/hafsaChy/report/build-status/main)
