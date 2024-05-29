@@ -19,7 +19,7 @@ I used SQLite and opted to use the ORM framework, Doctrine for database. An Enti
 
 To run the php script to populate the database via Doctrine, run ```composer importcsv``` or ```php bin/console csv:import```.
 
-## PHP Linter and Mess Detection
+### PHP Linter and Mess Detection
 
 To validate code use the following commands.
 
@@ -38,11 +38,11 @@ composer phpstan
 
 ```
 
-## Unit testing with PHPUnit
+### Unit testing with PHPUnit
 
 The unit testing framework PHPUnit is used foe unit test. To execute the tests, run ```composer phpunit```.
 
-## PhpMetrics and PhpDoc
+### PhpMetrics and PhpDoc
 
 PhpMetrics is a tool that reads the source code and creates a report containing quality metrics on the code. To generate the report run ```composer phpmetrics```. To generate the documentation with PhpDoc run 
 ```composer phpdoc```.
