@@ -224,12 +224,12 @@ class Game
     public function getOptions()
     {
         $options = [
-            "kitchen", "pantry", "garden", "farm", "flour",
-            "pizza sauce","yeast", "salt", "south", "north",
-            "east", "west","pizza", "chicken pizza", "tomato",
-            "ketchup", "pizza sauce", "chicken", "cheese", "eggs",
+            "kitchen", "pantry", "garden", "farm", "south", "north",
+            "east", "west","pizza", "chicken pizza", "flour",
+            "pizza sauce","yeast", "salt", "ketchup", "pizza sauce", 
+            "chicken", "cheese", "eggs",
             "warm water", "cold water", "shrimp", "sugar", "curry",
-            "jam", "vanilla", "cookies", "capsicum", "coriander"
+            "jam", "vanilla", "cookies", "tomato", "capsicum", "coriander"
         ];
 
         return $options;

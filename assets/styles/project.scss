@@ -68,18 +68,8 @@ $cursive: 'Amatic SC', cursive;
 .proj-navlink {
     text-decoration: none;
     font-size: $base-font-size * 2;
-    // color: #0e0c0c;
     transition: width 2s;
 }
-
-// .proj-navlink:hover {
-//     font-style: $sans-serif;
-//     width: 100px;
-// }
-
-// .proj-navlink:visited {
-//     color: #fff;
-// }
 
 .proj-main {
     margin: 0 15px 0 200px;
@@ -163,7 +153,7 @@ $cursive: 'Amatic SC', cursive;
 
 .proj-room {
     background-color: #c1b93f;
-    height: 150px;
+    height: 160px;
     width: 100%;
     display: flex;
     flex-flow: row wrap;
@@ -171,7 +161,7 @@ $cursive: 'Amatic SC', cursive;
 }
 
 .proj-img{
-    height: 150px;
+    height: 200px;
     width: 100%;
     object-fit: cover;
     opacity: 1;
@@ -179,7 +169,7 @@ $cursive: 'Amatic SC', cursive;
 
 .proj-basket {
     margin: 0;
-    padding: 0;
+    padding-left: 15%;
     display: flex;
     flex-flow: row nowrap;
     height: 150px;
@@ -210,7 +200,9 @@ $cursive: 'Amatic SC', cursive;
 }
 
 .proj-text {
-    margin: 1rem auto 300px;
+    margin: 0.5rem auto 130px;
+    padding-top: 80px;
+    padding-left: 15%;
     width: 80%;
     font-family: $sans-serif;
     text-align: center;
@@ -233,13 +225,19 @@ $cursive: 'Amatic SC', cursive;
     font-weight: bolder;
 }
 
-.proj-button-return {
+.proj-right {
+    position: absolute;
+    top: 6%;
+    left: 92%;
     width: 5%;
+    background-color: #f1ac4b;
+    font-weight: bolder;
+    color: black;
 }
 
 .proj-animation {
     width: 250px;
-    margin-left: 37%;
+    margin-left: 38%;
     position: relative;
     height: 35px;
     background-color: #ebe5b5ea;
@@ -282,7 +280,7 @@ $cursive: 'Amatic SC', cursive;
 
 .proj-input,
 .proj-select {
-    margin: 0;
+    margin-top: 10px;
     padding: 0.4rem 0.6rem;
     font-family: $sans-serif;
     border: 1px solid #f9e9ec;
@@ -307,8 +305,14 @@ $cursive: 'Amatic SC', cursive;
 .proj-api {
     background-color: #f8d5b6;
     padding: 2%;
+    border-radius: 5px;
 }
 
 .proj-api-button {
     width: 25%; 
+}
+
+.game-page {
+    width: 15%;
+    padding-left: 1%; 
 }
