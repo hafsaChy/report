@@ -17,7 +17,7 @@ To run the app locally, run ```php -S localhost:8888```. Then, the app can be se
 
 I used SQLite and opted to use the ORM framework, Doctrine for database. An Entity class is created for each table in the database, which is aviable in the folder *src/Entity/*. All the repositories for the Enity calsses are in *src/Repository/* folder. A a PHP script to populate the database tables from CSV files are created in *src/Command/CsvImport.php*.
 
-To run the php script to populate the database via Doctrine, run ```composer importcsv``` or ```php bin/console csv:import```.
+To run the php script to populate the database via Doctrine, run ```composer importcsv```.
 
 ### PHP Linter and Mess Detection
 

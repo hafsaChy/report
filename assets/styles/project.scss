@@ -19,6 +19,8 @@ $cursive: 'Amatic SC', cursive;
     flex-direction: column;
     justify-content: space-between;
     background-color: #fa844d;
+    background-image: linear-gradient(#fa844d, #fa5f18);
+
 }
 
 .proj-header {
@@ -131,8 +133,9 @@ $cursive: 'Amatic SC', cursive;
     text-decoration: none;
     text-align: center;
     background-color: blue;
-    color: #0d0c0c;
-    font-size: $base-font-size * 1.2;
+    // background-image: linear-gradient(#fa844d, #fa5f18);
+    color: white;
+    font-size: $base-font-size * 1.3;
     border-radius: 10px;
 }
 
@@ -174,6 +177,7 @@ $cursive: 'Amatic SC', cursive;
     flex-flow: row nowrap;
     height: 150px;
     background-color: #fac748;
+    // background-image: linear-gradient(yellow, #fa844d);
 
     div {
         padding: 0.5rem;
@@ -194,6 +198,7 @@ $cursive: 'Amatic SC', cursive;
     margin: 0;
     padding: 0.2rem 0.6rem;
     background-color: #fac748;
+    background-image: linear-gradient(#fab54d, #fa844d);
     font-family: $cursive;
     font-weight: bold;
     text-align: right;
@@ -221,7 +226,7 @@ $cursive: 'Amatic SC', cursive;
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 30px;
+    font-size: 45px;
     font-weight: bolder;
 }
 
@@ -233,6 +238,10 @@ $cursive: 'Amatic SC', cursive;
     background-color: #f1ac4b;
     font-weight: bolder;
     color: black;
+}
+
+.proj-right:hover {
+    background-color: darken(red, 10%);
 }
 
 .proj-animation {
@@ -315,4 +324,26 @@ $cursive: 'Amatic SC', cursive;
 .game-page {
     width: 15%;
     padding-left: 1%; 
+}
+
+.proj-figure {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    counter-increment: figures;
+
+    img {
+        margin: 0 auto;
+    }
+}
+
+.proj-fig-caption {
+    margin: 1rem auto;
+    width: fit-content;
+    font-size: 0.8rem;
+}
+
+.proj-fig-caption::before {
+    content: 'Figure -' counter(figures) ' ';
 }

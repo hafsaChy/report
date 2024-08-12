@@ -1,0 +1,62 @@
+<?php
+
+namespace App\Tests\Repository;
+
+use App\Entity\Item;
+use App\Repository\ItemRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\Mapping\ClassMetadata;
+use Doctrine\Persistence\ManagerRegistry;
+use PHPUnit\Framework\TestCase;
+
+class ItemRepositoryTest extends TestCase
+{
+    private $entityManager;
+    private $itemRepository;
+
+    protected function setUp(): void
+    {
+        $this->entityManager = $this->createMock(EntityManagerInterface::class);
+
+        $classMetadata = new ClassMetadata(Item::class);
+
+        $this->entityManager->method('getClassMetadata')
+                            ->willReturn($classMetadata);
+
+        $registry = $this->createMock(ManagerRegistry::class);
+        $registry->method('getManagerForClass')
+                 ->willReturn($this->entityManager);
+        
+        $this->itemRepository = new ItemRepository($registry);
+    }
+
+    public function testSave()
+    {
+        $item = new Item();
+
+        $this->entityManager->expects($this->once())
+                            ->method('persist')
+                            ->with($this->equalTo($item));
+
+        $this->itemRepository->save($item);
+    }
+
+    public function testFlush()
+    {
+        $this->entityManager->expects($this->once())
+                            ->method('flush');
+
+        $this->itemRepository->flush();
+    }
+
+    public function testRemove()
+    {
+        $item = new Item();
+
+        $this->entityManager->expects($this->once())
+                            ->method('remove')
+                            ->with($this->equalTo($item));
+
+        $this->itemRepository->remove($item);
+    }
+}

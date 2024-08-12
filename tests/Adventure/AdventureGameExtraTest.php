@@ -7,7 +7,7 @@ use App\Entity\Item;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Test cases for Game class
+ * Extra more Test cases for Game class
  */
 class AdventureGameExtraTest extends TestCase
 {
@@ -15,6 +15,11 @@ class AdventureGameExtraTest extends TestCase
      * @var Game $game
      */
     protected $game;
+
+    /**
+     * @var Availables $avl
+     */
+    protected $avl;
 
     /**
      * @var Room $room
@@ -50,6 +55,7 @@ class AdventureGameExtraTest extends TestCase
         ;
 
         $this->game = new Game($this->room, [$this->item]);
+        $this->avl = new Availables();
     }
 
     /**
@@ -74,22 +80,22 @@ class AdventureGameExtraTest extends TestCase
 
         // basket contains some ingredients
         $flour = (new Item())->setName($ingredients[1]);
-        $this->game->pickUp($flour);
+        $this->game->pickUpItem($flour);
         $this->assertFalse($this->game->checkIngredients());
 
         foreach ($ingredients as $ingredient) {
             $item = (new Item())->setName($ingredient);
-            $this->game->pickUp($item);
+            $this->game->pickUpItem($item);
         }
         $this->assertTrue($this->game->checkIngredients());
     }
 
     /**
-     * Test method getActions().
+     * Test method availableActions().
      */
-    public function testGetActions(): void
+    public function testAvailableActions(): void
     {
-        $actions = $this->game->getActions();
+        $actions = $this->avl->availableActions();
 
         $this->assertNotEmpty($actions);
         $this->assertContains("bake", $actions);
@@ -100,11 +106,11 @@ class AdventureGameExtraTest extends TestCase
     }
 
     /**
-     * Test method getOptions().
+     * Test method availableOptions().
      */
-    public function testGetOptions(): void
+    public function testAvailableOptions(): void
     {
-        $options = $this->game->getOptions();
+        $options = $this->avl->availableOptions();
         $this->assertContains('kitchen', $options);
         $this->assertContains('capsicum', $options);
     }

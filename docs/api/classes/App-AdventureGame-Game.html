@@ -194,11 +194,11 @@
 <dd>The current room.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/App-AdventureGame-Game.html#property_visited">$visited</a>
+    <a href="classes/App-AdventureGame-Game.html#property_visitedRoom">$visitedRoom</a>
     <span>
                         &nbsp;: array&lt;string|int, string&gt;            </span>
 </dt>
-<dd>The visited locations.</dd>
+<dd>The visited rooms.</dd>
 
     </dl>
 
@@ -216,6 +216,13 @@
 <dd>Constructs a new instance with a starting location and items.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-AdventureGame-Game.html#method_basketItem">basketItem()</a>
+    <span>
+                                &nbsp;: array&lt;int, object&gt;    </span>
+</dt>
+<dd>This method returns the content of the basket as an array.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/App-AdventureGame-Game.html#method_checkIngredients">checkIngredients()</a>
     <span>
                                 &nbsp;: bool    </span>
@@ -230,102 +237,74 @@
 <dd>This method returns True if the given item is in the basket.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AdventureGame-Game.html#method_checkValidDirection">checkValidDirection()</a>
-    <span>
-                                &nbsp;: bool    </span>
-</dt>
-<dd>This method checks if the input is a valid direction.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AdventureGame-Game.html#method_getActions">getActions()</a>
-    <span>
-                                &nbsp;: array&lt;int, string&gt;    </span>
-</dt>
-<dd>This method returns a list of all allowed actions.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AdventureGame-Game.html#method_getBasket">getBasket()</a>
-    <span>
-                                &nbsp;: array&lt;int, object&gt;    </span>
-</dt>
-<dd>This method returns the content of the basket as an array.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AdventureGame-Game.html#method_getCurrentRoom">getCurrentRoom()</a>
-    <span>
-                                &nbsp;: <a href="classes/App-Entity-Room.html"><abbr title="\App\Entity\Room">Room</abbr></a>    </span>
-</dt>
-<dd>This method retrieves the current location as an object.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AdventureGame-Game.html#method_getCurrentRoomItems">getCurrentRoomItems()</a>
+    <a href="classes/App-AdventureGame-Game.html#method_currentRoomItems">currentRoomItems()</a>
     <span>
                                 &nbsp;: array&lt;string|int, string&gt;|array&lt;string|int, null&gt;    </span>
 </dt>
 <dd>This method retrieves all items in the room and returns them as an array of strings.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AdventureGame-Game.html#method_getDirections">getDirections()</a>
+    <a href="classes/App-AdventureGame-Game.html#method_currentRoomName">currentRoomName()</a>
+    <span>
+                                &nbsp;: <a href="classes/App-Entity-Room.html"><abbr title="\App\Entity\Room">Room</abbr></a>    </span>
+</dt>
+<dd>This method retrieves the current room as an object.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-AdventureGame-Game.html#method_getAvailableDirections">getAvailableDirections()</a>
     <span>
                                 &nbsp;: array&lt;string|int, string&gt;    </span>
 </dt>
 <dd>This method returns an array of the possible directions.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AdventureGame-Game.html#method_getDirectionsAsString">getDirectionsAsString()</a>
+    <a href="classes/App-AdventureGame-Game.html#method_getDirectionsDescription">getDirectionsDescription()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>This method generates a string listing all the possible directions from the current location.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AdventureGame-Game.html#method_getLocationOfDirection">getLocationOfDirection()</a>
-    <span>
-                                &nbsp;: string|null    </span>
-</dt>
-<dd>This method returns the name of the place/room in the given direction.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AdventureGame-Game.html#method_getOptions">getOptions()</a>
-    <span>
-                                &nbsp;: array&lt;int, string&gt;    </span>
-</dt>
-<dd>This method returns a list of all allowed options.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AdventureGame-Game.html#method_getVisitedRooms">getVisitedRooms()</a>
-    <span>
-                                &nbsp;: array&lt;string|int, string&gt;    </span>
-</dt>
-<dd>This method provides an array of all visited locations.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AdventureGame-Game.html#method_inspect">inspect()</a>
+    <a href="classes/App-AdventureGame-Game.html#method_inspectRoomOrItem">inspectRoomOrItem()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>This method generates descriptive text when a player inspects a room or an object</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AdventureGame-Game.html#method_pickUp">pickUp()</a>
+    <a href="classes/App-AdventureGame-Game.html#method_pickUpItem">pickUpItem()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>This method adds the given item to the basket.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AdventureGame-Game.html#method_putDown">putDown()</a>
+    <a href="classes/App-AdventureGame-Game.html#method_putBack">putBack()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
 <dd>This method removes the given item from the basket.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-AdventureGame-Game.html#method_setRoomTo">setRoomTo()</a>
+    <a href="classes/App-AdventureGame-Game.html#method_roomAccordingToDirection">roomAccordingToDirection()</a>
+    <span>
+                                &nbsp;: string|null    </span>
+</dt>
+<dd>This method returns the name of the place/room in the given direction.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-AdventureGame-Game.html#method_setCurrentRoom">setCurrentRoom()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
 <dd>This method updates class properties with given arguments.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-AdventureGame-Game.html#method_visitedRooms">visitedRooms()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>This method provides an array of all visited rooms.</dd>
 
     </dl>
 
@@ -358,7 +337,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 
     </aside>
 
@@ -450,9 +429,9 @@
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_visited">
-        $visited
-        <a href="classes/App-AdventureGame-Game.html#property_visited" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_visitedRoom">
+        $visitedRoom
+        <a href="classes/App-AdventureGame-Game.html#property_visitedRoom" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
@@ -460,16 +439,16 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">The visited locations.</p>
+        <p class="phpdocumentor-summary">The visited rooms.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, string&gt;</span>
-    <span class="phpdocumentor-signature__name">$visited</span>
+    <span class="phpdocumentor-signature__name">$visitedRoom</span>
     </code>
 
     
@@ -544,6 +523,42 @@
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_basketItem">
+        basketItem()
+        <a href="classes/App-AdventureGame-Game.html#method_basketItem" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">316</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">This method returns the content of the basket as an array.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">basketItem</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, object&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;int, object&gt;</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_checkIngredients">
         checkIngredients()
         <a href="classes/App-AdventureGame-Game.html#method_checkIngredients" class="headerlink"><i class="fas fa-link"></i></a>
@@ -552,7 +567,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">242</span>
+    <span class="phpdocumentor-element-found-in__line">208</span>
 
     </aside>
 
@@ -588,7 +603,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">359</span>
+    <span class="phpdocumentor-element-found-in__line">325</span>
 
     </aside>
 
@@ -626,169 +641,15 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_checkValidDirection">
-        checkValidDirection()
-        <a href="classes/App-AdventureGame-Game.html#method_checkValidDirection" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_currentRoomItems">
+        currentRoomItems()
+        <a href="classes/App-AdventureGame-Game.html#method_currentRoomItems" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">171</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">This method checks if the input is a valid direction.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">checkValidDirection</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$input</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">bool</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getActions">
-        getActions()
-        <a href="classes/App-AdventureGame-Game.html#method_getActions" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">207</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">This method returns a list of all allowed actions.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getActions</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getBasket">
-        getBasket()
-        <a href="classes/App-AdventureGame-Game.html#method_getBasket" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">350</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">This method returns the content of the basket as an array.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getBasket</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, object&gt;</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;int, object&gt;</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getCurrentRoom">
-        getCurrentRoom()
-        <a href="classes/App-AdventureGame-Game.html#method_getCurrentRoom" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">54</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">This method retrieves the current location as an object.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getCurrentRoom</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/App-Entity-Room.html"><abbr title="\App\Entity\Room">Room</abbr></a></span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/App-Entity-Room.html"><abbr title="\App\Entity\Room">Room</abbr></a></span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getCurrentRoomItems">
-        getCurrentRoomItems()
-        <a href="classes/App-AdventureGame-Game.html#method_getCurrentRoomItems" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 
     </aside>
 
@@ -796,7 +657,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getCurrentRoomItems</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;|array&lt;string|int, null&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">currentRoomItems</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;|array&lt;string|int, null&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -816,15 +677,51 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getDirections">
-        getDirections()
-        <a href="classes/App-AdventureGame-Game.html#method_getDirections" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_currentRoomName">
+        currentRoomName()
+        <a href="classes/App-AdventureGame-Game.html#method_currentRoomName" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">142</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">This method retrieves the current room as an object.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">currentRoomName</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/App-Entity-Room.html"><abbr title="\App\Entity\Room">Room</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/App-Entity-Room.html"><abbr title="\App\Entity\Room">Room</abbr></a></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getAvailableDirections">
+        getAvailableDirections()
+        <a href="classes/App-AdventureGame-Game.html#method_getAvailableDirections" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">143</span>
 
     </aside>
 
@@ -832,7 +729,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getDirections</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+                    <span class="phpdocumentor-signature__name">getAvailableDirections</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -852,15 +749,15 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getDirectionsAsString">
-        getDirectionsAsString()
-        <a href="classes/App-AdventureGame-Game.html#method_getDirectionsAsString" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getDirectionsDescription">
+        getDirectionsDescription()
+        <a href="classes/App-AdventureGame-Game.html#method_getDirectionsDescription" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">110</span>
+    <span class="phpdocumentor-element-found-in__line">109</span>
 
     </aside>
 
@@ -868,7 +765,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getDirectionsAsString</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">getDirectionsDescription</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -888,133 +785,15 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getLocationOfDirection">
-        getLocationOfDirection()
-        <a href="classes/App-AdventureGame-Game.html#method_getLocationOfDirection" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_inspectRoomOrItem">
+        inspectRoomOrItem()
+        <a href="classes/App-AdventureGame-Game.html#method_inspectRoomOrItem" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">182</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">This method returns the name of the place/room in the given direction.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getLocationOfDirection</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$input</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
-
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">string|null</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getOptions">
-        getOptions()
-        <a href="classes/App-AdventureGame-Game.html#method_getOptions" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">224</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">This method returns a list of all allowed options.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getOptions</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;int, string&gt;</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getVisitedRooms">
-        getVisitedRooms()
-        <a href="classes/App-AdventureGame-Game.html#method_getVisitedRooms" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">100</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">This method provides an array of all visited locations.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getVisitedRooms</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_inspect">
-        inspect()
-        <a href="classes/App-AdventureGame-Game.html#method_inspect" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">274</span>
+    <span class="phpdocumentor-element-found-in__line">240</span>
 
     </aside>
 
@@ -1022,7 +801,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">inspect</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">inspectRoomOrItem</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$object</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1052,15 +831,15 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_pickUp">
-        pickUp()
-        <a href="classes/App-AdventureGame-Game.html#method_pickUp" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_pickUpItem">
+        pickUpItem()
+        <a href="classes/App-AdventureGame-Game.html#method_pickUpItem" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">307</span>
+    <span class="phpdocumentor-element-found-in__line">273</span>
 
     </aside>
 
@@ -1068,7 +847,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">pickUp</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Entity-Item.html"><abbr title="\App\Entity\Item">Item</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$item</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">pickUpItem</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Entity-Item.html"><abbr title="\App\Entity\Item">Item</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$item</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1098,15 +877,15 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_putDown">
-        putDown()
-        <a href="classes/App-AdventureGame-Game.html#method_putDown" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_putBack">
+        putBack()
+        <a href="classes/App-AdventureGame-Game.html#method_putBack" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">328</span>
+    <span class="phpdocumentor-element-found-in__line">294</span>
 
     </aside>
 
@@ -1114,7 +893,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">putDown</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Entity-Item.html"><abbr title="\App\Entity\Item">Item</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$item</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">putBack</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Entity-Item.html"><abbr title="\App\Entity\Item">Item</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$item</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1144,23 +923,23 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_setRoomTo">
-        setRoomTo()
-        <a href="classes/App-AdventureGame-Game.html#method_setRoomTo" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_roomAccordingToDirection">
+        roomAccordingToDirection()
+        <a href="classes/App-AdventureGame-Game.html#method_roomAccordingToDirection" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">182</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">This method updates class properties with given arguments.</p>
+        <p class="phpdocumentor-summary">This method returns the name of the place/room in the given direction.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">setRoomTo</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Entity-Room.html"><abbr title="\App\Entity\Room">Room</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$newLocation</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int, <a href="classes/App-Entity-Item.html"><abbr title="\App\Entity\Item">Item</abbr></a>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$items</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">roomAccordingToDirection</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$input</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1168,7 +947,53 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$newLocation</span>
+                <span class="phpdocumentor-signature__argument__name">$input</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setCurrentRoom">
+        setCurrentRoom()
+        <a href="classes/App-AdventureGame-Game.html#method_setCurrentRoom" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">83</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">This method updates class properties with given arguments.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setCurrentRoom</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Entity-Room.html"><abbr title="\App\Entity\Room">Room</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$newRoom</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;int, <a href="classes/App-Entity-Item.html"><abbr title="\App\Entity\Item">Item</abbr></a>&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$items</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$newRoom</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/App-Entity-Room.html"><abbr title="\App\Entity\Room">Room</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
@@ -1186,6 +1011,42 @@
     
 
     
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_visitedRooms">
+        visitedRooms()
+        <a href="classes/App-AdventureGame-Game.html#method_visitedRooms" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/AdventureGame/Game.php"><a href="files/src-adventuregame-game.html"><abbr title="src/AdventureGame/Game.php">Game.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">99</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">This method provides an array of all visited rooms.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">visitedRooms</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+            </section>
+
 </article>
             </section>
 
@@ -1303,7 +1164,7 @@
                                                     <li><a href="classes/App-AdventureGame-Game.html#property_basket">$basket<a href="classes/App-AdventureGame-Game.html"></li>
                                                     <li><a href="classes/App-AdventureGame-Game.html#property_currentItems">$currentItems<a href="classes/App-AdventureGame-Game.html"></li>
                                                     <li><a href="classes/App-AdventureGame-Game.html#property_currentRoom">$currentRoom<a href="classes/App-AdventureGame-Game.html"></li>
-                                                    <li><a href="classes/App-AdventureGame-Game.html#property_visited">$visited<a href="classes/App-AdventureGame-Game.html"></li>
+                                                    <li><a href="classes/App-AdventureGame-Game.html#property_visitedRoom">$visitedRoom<a href="classes/App-AdventureGame-Game.html"></li>
                                             </ul>
                 </li>
             
@@ -1311,22 +1172,19 @@
             <li>
                 <ul class="phpdocumentor-list -clean">
                                             <li><a href="classes/App-AdventureGame-Game.html#method___construct">__construct()</a></li>
+                                            <li><a href="classes/App-AdventureGame-Game.html#method_basketItem">basketItem()</a></li>
                                             <li><a href="classes/App-AdventureGame-Game.html#method_checkIngredients">checkIngredients()</a></li>
                                             <li><a href="classes/App-AdventureGame-Game.html#method_checkItemInBasket">checkItemInBasket()</a></li>
-                                            <li><a href="classes/App-AdventureGame-Game.html#method_checkValidDirection">checkValidDirection()</a></li>
-                                            <li><a href="classes/App-AdventureGame-Game.html#method_getActions">getActions()</a></li>
-                                            <li><a href="classes/App-AdventureGame-Game.html#method_getBasket">getBasket()</a></li>
-                                            <li><a href="classes/App-AdventureGame-Game.html#method_getCurrentRoom">getCurrentRoom()</a></li>
-                                            <li><a href="classes/App-AdventureGame-Game.html#method_getCurrentRoomItems">getCurrentRoomItems()</a></li>
-                                            <li><a href="classes/App-AdventureGame-Game.html#method_getDirections">getDirections()</a></li>
-                                            <li><a href="classes/App-AdventureGame-Game.html#method_getDirectionsAsString">getDirectionsAsString()</a></li>
-                                            <li><a href="classes/App-AdventureGame-Game.html#method_getLocationOfDirection">getLocationOfDirection()</a></li>
-                                            <li><a href="classes/App-AdventureGame-Game.html#method_getOptions">getOptions()</a></li>
-                                            <li><a href="classes/App-AdventureGame-Game.html#method_getVisitedRooms">getVisitedRooms()</a></li>
-                                            <li><a href="classes/App-AdventureGame-Game.html#method_inspect">inspect()</a></li>
-                                            <li><a href="classes/App-AdventureGame-Game.html#method_pickUp">pickUp()</a></li>
-                                            <li><a href="classes/App-AdventureGame-Game.html#method_putDown">putDown()</a></li>
-                                            <li><a href="classes/App-AdventureGame-Game.html#method_setRoomTo">setRoomTo()</a></li>
+                                            <li><a href="classes/App-AdventureGame-Game.html#method_currentRoomItems">currentRoomItems()</a></li>
+                                            <li><a href="classes/App-AdventureGame-Game.html#method_currentRoomName">currentRoomName()</a></li>
+                                            <li><a href="classes/App-AdventureGame-Game.html#method_getAvailableDirections">getAvailableDirections()</a></li>
+                                            <li><a href="classes/App-AdventureGame-Game.html#method_getDirectionsDescription">getDirectionsDescription()</a></li>
+                                            <li><a href="classes/App-AdventureGame-Game.html#method_inspectRoomOrItem">inspectRoomOrItem()</a></li>
+                                            <li><a href="classes/App-AdventureGame-Game.html#method_pickUpItem">pickUpItem()</a></li>
+                                            <li><a href="classes/App-AdventureGame-Game.html#method_putBack">putBack()</a></li>
+                                            <li><a href="classes/App-AdventureGame-Game.html#method_roomAccordingToDirection">roomAccordingToDirection()</a></li>
+                                            <li><a href="classes/App-AdventureGame-Game.html#method_setCurrentRoom">setCurrentRoom()</a></li>
+                                            <li><a href="classes/App-AdventureGame-Game.html#method_visitedRooms">visitedRooms()</a></li>
                                     </ul>
             </li>
                     </ul>

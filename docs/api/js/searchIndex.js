@@ -1,6 +1,21 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\App\\AdventureGame\\Availables",
+            "name": "Availables",
+            "summary": "",
+            "url": "classes/App-AdventureGame-Availables.html"
+        },                {
+            "fqsen": "\\App\\AdventureGame\\Availables\u003A\u003AavailableActions\u0028\u0029",
+            "name": "availableActions",
+            "summary": "This\u0020method\u0020returns\u0020a\u0020list\u0020of\u0020all\u0020allowed\u0020actions.",
+            "url": "classes/App-AdventureGame-Availables.html#method_availableActions"
+        },                {
+            "fqsen": "\\App\\AdventureGame\\Availables\u003A\u003AavailableOptions\u0028\u0029",
+            "name": "availableOptions",
+            "summary": "This\u0020method\u0020returns\u0020a\u0020list\u0020of\u0020all\u0020allowed\u0020options.",
+            "url": "classes/App-AdventureGame-Availables.html#method_availableOptions"
+        },                {
             "fqsen": "\\App\\AdventureGame\\Game",
             "name": "Game",
             "summary": "",
@@ -11,80 +26,65 @@ Search.appendIndex(
             "summary": "Constructs\u0020a\u0020new\u0020instance\u0020with\u0020a\u0020starting\u0020location\u0020and\u0020items.",
             "url": "classes/App-AdventureGame-Game.html#method___construct"
         },                {
-            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AgetCurrentRoom\u0028\u0029",
-            "name": "getCurrentRoom",
-            "summary": "This\u0020method\u0020retrieves\u0020the\u0020current\u0020location\u0020as\u0020an\u0020object.",
-            "url": "classes/App-AdventureGame-Game.html#method_getCurrentRoom"
+            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AcurrentRoomName\u0028\u0029",
+            "name": "currentRoomName",
+            "summary": "This\u0020method\u0020retrieves\u0020the\u0020current\u0020room\u0020as\u0020an\u0020object.",
+            "url": "classes/App-AdventureGame-Game.html#method_currentRoomName"
         },                {
-            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AgetCurrentRoomItems\u0028\u0029",
-            "name": "getCurrentRoomItems",
+            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AcurrentRoomItems\u0028\u0029",
+            "name": "currentRoomItems",
             "summary": "This\u0020method\u0020retrieves\u0020all\u0020items\u0020in\u0020the\u0020room\u0020and\u0020returns\u0020them\u0020as\u0020an\u0020array\u0020of\u0020strings.",
-            "url": "classes/App-AdventureGame-Game.html#method_getCurrentRoomItems"
+            "url": "classes/App-AdventureGame-Game.html#method_currentRoomItems"
         },                {
-            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AsetRoomTo\u0028\u0029",
-            "name": "setRoomTo",
+            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AsetCurrentRoom\u0028\u0029",
+            "name": "setCurrentRoom",
             "summary": "This\u0020method\u0020updates\u0020class\u0020properties\u0020with\u0020given\u0020arguments.",
-            "url": "classes/App-AdventureGame-Game.html#method_setRoomTo"
+            "url": "classes/App-AdventureGame-Game.html#method_setCurrentRoom"
         },                {
-            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AgetVisitedRooms\u0028\u0029",
-            "name": "getVisitedRooms",
-            "summary": "This\u0020method\u0020provides\u0020an\u0020array\u0020of\u0020all\u0020visited\u0020locations.",
-            "url": "classes/App-AdventureGame-Game.html#method_getVisitedRooms"
+            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AvisitedRooms\u0028\u0029",
+            "name": "visitedRooms",
+            "summary": "This\u0020method\u0020provides\u0020an\u0020array\u0020of\u0020all\u0020visited\u0020rooms.",
+            "url": "classes/App-AdventureGame-Game.html#method_visitedRooms"
         },                {
-            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AgetDirectionsAsString\u0028\u0029",
-            "name": "getDirectionsAsString",
+            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AgetDirectionsDescription\u0028\u0029",
+            "name": "getDirectionsDescription",
             "summary": "This\u0020method\u0020generates\u0020a\u0020string\u0020listing\u0020all\u0020the\u0020possible\u0020directions\u0020from\u0020the\u0020current\u0020location.",
-            "url": "classes/App-AdventureGame-Game.html#method_getDirectionsAsString"
+            "url": "classes/App-AdventureGame-Game.html#method_getDirectionsDescription"
         },                {
-            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AgetDirections\u0028\u0029",
-            "name": "getDirections",
+            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AgetAvailableDirections\u0028\u0029",
+            "name": "getAvailableDirections",
             "summary": "This\u0020method\u0020returns\u0020an\u0020array\u0020of\u0020the\u0020possible\u0020directions.",
-            "url": "classes/App-AdventureGame-Game.html#method_getDirections"
+            "url": "classes/App-AdventureGame-Game.html#method_getAvailableDirections"
         },                {
-            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AcheckValidDirection\u0028\u0029",
-            "name": "checkValidDirection",
-            "summary": "This\u0020method\u0020checks\u0020if\u0020the\u0020input\u0020is\u0020a\u0020valid\u0020direction.",
-            "url": "classes/App-AdventureGame-Game.html#method_checkValidDirection"
-        },                {
-            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AgetLocationOfDirection\u0028\u0029",
-            "name": "getLocationOfDirection",
+            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AroomAccordingToDirection\u0028\u0029",
+            "name": "roomAccordingToDirection",
             "summary": "This\u0020method\u0020returns\u0020the\u0020name\u0020of\u0020the\u0020place\/room\u0020in\u0020the\u0020given\u0020direction.",
-            "url": "classes/App-AdventureGame-Game.html#method_getLocationOfDirection"
-        },                {
-            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AgetActions\u0028\u0029",
-            "name": "getActions",
-            "summary": "This\u0020method\u0020returns\u0020a\u0020list\u0020of\u0020all\u0020allowed\u0020actions.",
-            "url": "classes/App-AdventureGame-Game.html#method_getActions"
-        },                {
-            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AgetOptions\u0028\u0029",
-            "name": "getOptions",
-            "summary": "This\u0020method\u0020returns\u0020a\u0020list\u0020of\u0020all\u0020allowed\u0020options.",
-            "url": "classes/App-AdventureGame-Game.html#method_getOptions"
+            "url": "classes/App-AdventureGame-Game.html#method_roomAccordingToDirection"
         },                {
             "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AcheckIngredients\u0028\u0029",
             "name": "checkIngredients",
             "summary": "This\u0020method\u0020checks\u0020if\u0020the\u0020basket\u0020contains\u0020all\u0020the\u0020ingredients\u0020required\u0020for\u0020the\u0020pizza.",
             "url": "classes/App-AdventureGame-Game.html#method_checkIngredients"
         },                {
-            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003Ainspect\u0028\u0029",
-            "name": "inspect",
+            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AinspectRoomOrItem\u0028\u0029",
+            "name": "inspectRoomOrItem",
             "summary": "This\u0020method\u0020generates\u0020descriptive\u0020text\u0020when\u0020a\u0020player\u0020inspects\u0020a\u0020room\u0020or\u0020an\u0020object",
-            "url": "classes/App-AdventureGame-Game.html#method_inspect"
+            "url": "classes/App-AdventureGame-Game.html#method_inspectRoomOrItem"
         },                {
-            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003ApickUp\u0028\u0029",
-            "name": "pickUp",
+            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003ApickUpItem\u0028\u0029",
+            "name": "pickUpItem",
             "summary": "This\u0020method\u0020adds\u0020the\u0020given\u0020item\u0020to\u0020the\u0020basket.",
-            "url": "classes/App-AdventureGame-Game.html#method_pickUp"
+            "url": "classes/App-AdventureGame-Game.html#method_pickUpItem"
         },                {
-            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AputDown\u0028\u0029",
-            "name": "putDown",
+            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AputBack\u0028\u0029",
+            "name": "putBack",
             "summary": "This\u0020method\u0020removes\u0020the\u0020given\u0020item\u0020from\u0020the\u0020basket.",
-            "url": "classes/App-AdventureGame-Game.html#method_putDown"
+            "url": "classes/App-AdventureGame-Game.html#method_putBack"
         },                {
-            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AgetBasket\u0028\u0029",
-            "name": "getBasket",
+            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AbasketItem\u0028\u0029",
+            "name": "basketItem",
             "summary": "This\u0020method\u0020returns\u0020the\u0020content\u0020of\u0020the\u0020basket\u0020as\u0020an\u0020array.",
-            "url": "classes/App-AdventureGame-Game.html#method_getBasket"
+            "url": "classes/App-AdventureGame-Game.html#method_basketItem"
         },                {
             "fqsen": "\\App\\AdventureGame\\Game\u003A\u003AcheckItemInBasket\u0028\u0029",
             "name": "checkItemInBasket",
@@ -101,15 +101,15 @@ Search.appendIndex(
             "summary": "The\u0020items\u0020currently\u0020in\u0020the\u0020room.",
             "url": "classes/App-AdventureGame-Game.html#property_currentItems"
         },                {
+            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003A\u0024visitedRoom",
+            "name": "visitedRoom",
+            "summary": "The\u0020visited\u0020rooms.",
+            "url": "classes/App-AdventureGame-Game.html#property_visitedRoom"
+        },                {
             "fqsen": "\\App\\AdventureGame\\Game\u003A\u003A\u0024basket",
             "name": "basket",
             "summary": "The\u0020items\u0020in\u0020the\u0020basket.",
             "url": "classes/App-AdventureGame-Game.html#property_basket"
-        },                {
-            "fqsen": "\\App\\AdventureGame\\Game\u003A\u003A\u0024visited",
-            "name": "visited",
-            "summary": "The\u0020visited\u0020locations.",
-            "url": "classes/App-AdventureGame-Game.html#property_visited"
         },                {
             "fqsen": "\\App\\Card\\Card",
             "name": "Card",
@@ -306,10 +306,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-AdventureGameApiController.html#method_projectApiDirections"
         },                {
-            "fqsen": "\\App\\Controller\\AdventureGameApiController\u003A\u003AgetActions\u0028\u0029",
-            "name": "getActions",
+            "fqsen": "\\App\\Controller\\AdventureGameApiController\u003A\u003AprojApiAvailableActions\u0028\u0029",
+            "name": "projApiAvailableActions",
             "summary": "",
-            "url": "classes/App-Controller-AdventureGameApiController.html#method_getActions"
+            "url": "classes/App-Controller-AdventureGameApiController.html#method_projApiAvailableActions"
         },                {
             "fqsen": "\\App\\Controller\\AdventureGameApiController\u003A\u003AprojectApiInspect\u0028\u0029",
             "name": "projectApiInspect",
@@ -361,10 +361,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-AdventureGameController.html#method_projectGamePickup"
         },                {
-            "fqsen": "\\App\\Controller\\AdventureGameController\u003A\u003AprojectGamPutDown\u0028\u0029",
-            "name": "projectGamPutDown",
+            "fqsen": "\\App\\Controller\\AdventureGameController\u003A\u003AprojectGamPutBack\u0028\u0029",
+            "name": "projectGamPutBack",
             "summary": "",
-            "url": "classes/App-Controller-AdventureGameController.html#method_projectGamPutDown"
+            "url": "classes/App-Controller-AdventureGameController.html#method_projectGamPutBack"
         },                {
             "fqsen": "\\App\\Controller\\AdventureGamePageController",
             "name": "AdventureGamePageController",

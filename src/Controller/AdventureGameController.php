@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\AdventureGame\Availables;
 use App\AdventureGame\Game;
 use App\Entity\Item;
 use App\Entity\Room;
@@ -15,12 +16,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AdventureGameController extends AbstractController
 {
-    // #[Route('/proj', name: 'proj_home')]
-    // public function projectHome(): Response
-    // {
-    //     return $this->render('adventure/index.html.twig');
-    // }
-
     #[Route('/proj/init/game', name: 'proj_init_game')]
     public function projectInitGame(
         RoomRepository $roomRepository,
@@ -60,24 +55,25 @@ class AdventureGameController extends AbstractController
             return $this->redirectToRoute('proj_init_game');
         }
 
+        $avl = new Availables();
         $game = $session->get("adventure");
         assert($game instanceof Game);
-        $currentRoom = $game->getCurrentRoom();
+        $currentRoom = $game->currentRoomName();
 
         assert($currentRoom instanceof Room);
         $data["place"] = $currentRoom->getName();
         $data["image"] = $currentRoom->getImage();
         $data["description"] = 'You are at '.$currentRoom->getDescription().'.';
-        $data['directions'] = $game->getDirectionsAsString();
-        $data['options'] = $game->getActions();
-        $data['selectOptions'] = $game->getOptions();
+        $data['directions'] = $game->getDirectionsDescription();
+        $data['options'] = $avl->availableActions();
+        $data['selectOptions'] = $avl->availableOptions();
 
 
         if ($session->get("action")) {
             $data["action"] = $session->get("action");
         }
 
-        $basket = $game->getBasket();
+        $basket = $game->basketItem();
 
         if (!empty($basket)) {
             foreach ($basket as $item) {
@@ -112,7 +108,7 @@ class AdventureGameController extends AbstractController
         $result = "";
 
         if ($action == "inspect") {
-            $result = $game->inspect($cleanedInput);
+            $result = $game->inspectRoomOrItem($cleanedInput);
         }
 
         if (empty($cleanedInput)) {
@@ -124,7 +120,7 @@ class AdventureGameController extends AbstractController
         }
 
         if ($action == "put back") {
-            return $this->redirectToRoute('proj_game_putdown', ['input' => $cleanedInput]);
+            return $this->redirectToRoute('proj_game_putback', ['input' => $cleanedInput]);
 
         }
 
@@ -154,16 +150,16 @@ class AdventureGameController extends AbstractController
 
         $game = $session->get("adventure");
         assert($game instanceof Game);
-        $currentRoom = $game->getCurrentRoom();
+        $currentRoom = $game->currentRoomName();
         assert($currentRoom instanceof Room);
 
-        $completeRecipe = $game->checkIngredients();
+        $ingredsOtherRooms = $game->checkIngredients();
         $result = "Your basket does not contain enough ingredients to bake anything here.";
         $alternatives = ["pizza", "chicken pizza"];
         if (in_array($input, $alternatives)) {
             $result = "Some ingredients are still missing to bake the ".$input.".";
         }
-        if ($completeRecipe) {
+        if ($ingredsOtherRooms) {
             $result = "You gathered almost all the ingredients to bake the pizza. ";
             $result .= "Go back to the kitchen, pick up warm water from there and start baking.";
             if ($currentRoom->getName() == "kitchen") {
@@ -196,12 +192,12 @@ class AdventureGameController extends AbstractController
         assert($game instanceof Game);
         $result = "";
 
-        $locationAtDirection = $game->getLocationOfDirection($input);
+        $locationAtDirection = $game->roomAccordingToDirection($input);
         if ($locationAtDirection) {
             $newPlace = $roomRepository->findOneBy(['name' => $locationAtDirection]);
             $items = $itemRepository->findBy(['room' => $locationAtDirection]);
             if ($newPlace and is_array($items)) {
-                $game->setRoomTo($newPlace, $items);
+                $game->setCurrentRoom($newPlace, $items);
             }
         }
 
@@ -224,12 +220,12 @@ class AdventureGameController extends AbstractController
         $game = $session->get("adventure");
         assert($game instanceof Game);
 
-        $items = $game->getCurrentRoomItems();
+        $items = $game->currentRoomItems();
         $result = "You look around, but there is no ".$input." to pick up in this place. ";
         if (in_array($input, $items)) {
             $itemToPickUp = $itemRepository->findOneBy(['name' => $input]);
             if ($itemToPickUp) {
-                $result = $game->pickUp($itemToPickUp);
+                $result = $game->pickUpItem($itemToPickUp);
             }
         }
         if($input == "none") {
@@ -243,8 +239,8 @@ class AdventureGameController extends AbstractController
         return $this->redirectToRoute('proj_game');
     }
 
-    #[Route('/proj/game/putdown/{input}', name: 'proj_game_putdown', methods: 'GET')]
-    public function projectGamPutDown(
+    #[Route('/proj/game/putback/{input}', name: 'proj_game_putback', methods: 'GET')]
+    public function projectGamPutBack(
         ItemRepository $itemRepository,
         SessionInterface $session,
         string $input
@@ -260,9 +256,9 @@ class AdventureGameController extends AbstractController
         $result = "You are trying to put back the ".$input." from your basket";
         $result .= ", but there is no ".$input." in the basket.";
         if ($itemIsInBasket) {
-            $itemToPutDown = $itemRepository->findOneBy(['name' => $input]);
-            if ($itemToPutDown) {
-                $result = $game->putDown($itemToPutDown);
+            $itemToPutBack = $itemRepository->findOneBy(['name' => $input]);
+            if ($itemToPutBack) {
+                $result = $game->putBack($itemToPutBack);
             }
         }
 
@@ -276,22 +272,4 @@ class AdventureGameController extends AbstractController
 
         return $this->redirectToRoute('proj_game');
     }
-
-    // #[Route('/proj/about', name: 'proj_about')]
-    // public function projectAbout(): Response
-    // {
-    //     return $this->render('adventure/about.html.twig');
-    // }
-
-    // #[Route('/proj/about/database', name: 'proj_about_db')]
-    // public function projectAboutDb(): Response
-    // {
-    //     return $this->render('adventure/database.html.twig');
-    // }
-
-    // #[Route('/proj/bakepizza', name: 'proj_cheatsheet')]
-    // public function projectCheat(): Response
-    // {
-    //     return $this->render('adventure/bake-cheatsheet.html.twig');
-    // }
 }

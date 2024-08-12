@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Tests\Entity;
+namespace App\Entity;
 
-use App\Entity\Item;
+// use App\Entity\Item;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 

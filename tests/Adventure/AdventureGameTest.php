@@ -53,18 +53,18 @@ class AdventureGameTest extends TestCase
     }
 
     /**
-     * Test method pickUp().
+     * Test method for pickUpItem().
      */
     public function testPickUpOne(): void
     {
-        $output = $this->game->pickUp($this->item);
+        $output = $this->game->pickUpItem($this->item);
 
         $this->assertIsString($output);
         $this->assertStringContainsString("white board", $output);
     }
 
     /**
-     * Test method pickUp().
+     * Test method for pickUpItem().
      */
     public function testPickUpMany(): void
     {
@@ -72,59 +72,59 @@ class AdventureGameTest extends TestCase
             $item = (new Item())
                 ->setName(strval($i))
             ;
-            $this->game->pickUp($item);
+            $this->game->pickUpItem($item);
         }
 
-        $output = $this->game->pickUp($this->item);
+        $output = $this->game->pickUpItem($this->item);
         $this->assertIsString($output);
         $this->assertStringContainsString("full", $output);
     }
 
     /**
-     * Test method putDown().
+     * Test method for putBack().
      */
-    public function testPutDownEmpty(): void
+    public function testPutBackEmpty(): void
     {
-        $output = $this->game->putDown($this->item);
+        $output = $this->game->putBack($this->item);
 
         $this->assertIsString($output);
         $this->assertStringContainsString("empty", $output);
     }
 
     /**
-     * Test method putDown().
+     * Test method for putBack().
      */
-    public function testPutDownNotExist(): void
+    public function testPutBackNotExist(): void
     {
         $noItem = (new Item())->setName("nothing");
-        $this->game->pickUp($noItem);
-        $output = $this->game->putDown($this->item);
+        $this->game->pickUpItem($noItem);
+        $output = $this->game->putBack($this->item);
 
         $this->assertIsString($output);
-        $this->assertStringContainsString("not in the basket", $output);
+        $this->assertStringContainsString("not available in the basket", $output);
     }
 
     /**
-     * Test method putDown().
+     * Test method for putBack().
      */
-    public function testPutDownExist(): void
+    public function testPutBackExist(): void
     {
         $someItem = (new Item())->setName("something");
-        $this->game->pickUp($someItem);
-        $output = $this->game->putDown($someItem);
+        $this->game->pickUpItem($someItem);
+        $output = $this->game->putBack($someItem);
 
         $this->assertIsString($output);
         $this->assertStringContainsString("something", $output);
     }
 
     /**
-     * Test method checkItemInBasket().
+     * Test method for checkItemInBasket().
      */
     public function testCheckItemInBasket(): void
     {
         $this->assertFalse($this->game->checkItemInBasket("white board"));
 
-        $output = $this->game->pickUp($this->item);
+        $output = $this->game->pickUpItem($this->item);
         $itemName = $this->item->getName();
         if ($itemName) {
             $this->assertStringContainsString($itemName, $output);
@@ -133,11 +133,11 @@ class AdventureGameTest extends TestCase
     }
 
     /**
-     * Test method inspect().
+     * Test method for inspectRoomOrItem().
      */
-    public function testInspectRoom(): void
+    public function testInspectRoomOrItemRoom(): void
     {
-        $output = $this->game->inspect("school");
+        $output = $this->game->inspectRoomOrItem("school");
 
         $this->assertNotEmpty($output);
         $this->assertIsString($output);
@@ -145,11 +145,11 @@ class AdventureGameTest extends TestCase
     }
 
     /**
-     * Test method inspect().
+     * Test method for inspectRoomOrItem().
      */
-    public function testInspectItem(): void
+    public function testInspectRoomOrItemItem(): void
     {
-        $output = $this->game->inspect("white board");
+        $output = $this->game->inspectRoomOrItem("white board");
 
         $this->assertNotEmpty($output);
         $this->assertIsString($output);
@@ -157,13 +157,13 @@ class AdventureGameTest extends TestCase
     }
 
     /**
-     * Test method inspect().
+     * Test method for inspectRoomOrItem().
      */
-    public function testInspectBasketItem(): void
+    public function testInspectRoomOrItemBasketItem(): void
     {
         $newItem = (new Item())->setName("something")->setDescription("something in the school");
-        $this->game->pickUp($newItem);
-        $output = $this->game->inspect("something");
+        $this->game->pickUpItem($newItem);
+        $output = $this->game->inspectRoomOrItem("something");
 
         $this->assertNotEmpty($output);
         $this->assertIsString($output);
@@ -171,11 +171,11 @@ class AdventureGameTest extends TestCase
     }
 
     /**
-     * Test method inspect().
+     * Test method for inspectRoomOrItem().
      */
-    public function testInspectEmptyInput(): void
+    public function testInspectRoomOrItemEmptyInput(): void
     {
-        $output = $this->game->inspect("");
+        $output = $this->game->inspectRoomOrItem("");
 
         $this->assertNotEmpty($output);
         $this->assertIsString($output);

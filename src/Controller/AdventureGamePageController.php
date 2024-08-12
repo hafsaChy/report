@@ -2,11 +2,11 @@
 
 namespace App\Controller;
 
-use App\AdventureGame\Game;
-use App\Entity\Item;
-use App\Entity\Room;
-use App\Repository\ItemRepository;
-use App\Repository\RoomRepository;
+// use App\AdventureGame\Game;
+// use App\Entity\Item;
+// use App\Entity\Room;
+// use App\Repository\ItemRepository;
+// use App\Repository\RoomRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Request;

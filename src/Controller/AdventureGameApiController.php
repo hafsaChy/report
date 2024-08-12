@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\AdventureGame\Availables;
 use App\AdventureGame\Game;
 use App\Entity\Room;
 use App\Entity\Item;
@@ -35,10 +36,10 @@ class AdventureGameApiController extends AdventureGameController
         }
 
         assert($game instanceof Game);
-        $currentRoom = $game->getCurrentRoom();
+        $currentRoom = $game->currentRoomName();
         assert($currentRoom instanceof Room);
         $data["currentRoom"] = $currentRoom->getName();
-        $data["ItemsInRoom"] = $game->getCurrentRoomItems();
+        $data["ItemsInRoom"] = $game->currentRoomItems();
 
 
         $response = new JsonResponse($data);
@@ -64,9 +65,9 @@ class AdventureGameApiController extends AdventureGameController
             return new JsonResponse(['message' => 'Game session not found.'], Response::HTTP_NOT_FOUND);
         }
 
-        $currentRoom = $game->getCurrentRoom();
+        $currentRoom = $game->currentRoomName();
         $data["currentRoom"] = $currentRoom->getName();
-        $data["directions"] = $game->getDirectionsAsString();
+        $data["directions"] = $game->getDirectionsDescription();
 
         $response = new JsonResponse($data);
         $response->setEncodingOptions(
@@ -76,16 +77,14 @@ class AdventureGameApiController extends AdventureGameController
     }
 
     #[Route('/proj/api/actions', name: 'proj_actions', methods: ['GET'])]
-    public function getActions(SessionInterface $session): JsonResponse
+    public function projApiAvailableActions(SessionInterface $session): JsonResponse
     {
         if (!$session->get("adventure")) {
             return new JsonResponse(['message' => 'Game session not found.'], Response::HTTP_NOT_FOUND);
         }
 
-        $game = $session->get("adventure");
-        assert($game instanceof Game);
-
-        $actions = $game->getActions();
+        $avl = new Availables();
+        $actions = $avl->availableActions();
         return new JsonResponse(['actions' => $actions]);
     }
 
@@ -114,30 +113,13 @@ class AdventureGameApiController extends AdventureGameController
         $data["object"] = $cleanedInput;
 
         $room = $roomRepository->findOneBy(['name' => $cleanedInput]);
-
-        // if ($room) {
-        //     assert($room instanceof Room);
-        //     $data["description"] = $room->getInspect();
-        //     error_log("Room found: " . $room->getName());
-        // } else {
-        //     $item = $itemsRepository->findOneBy(['name' => $cleanedInput]);
-
-        //     if ($item) {
-        //         assert($item instanceof Item);
-        //         $data["description"] = $item->getDescription();
-        //         error_log("Item found: " . $item->getName());
-        //     } else {
-        //         $data["description"] = "Object not found.";
-        //         error_log("Object not found for input: " . $cleanedInput);
-        //     }
-        // }
+        $item = $itemsRepository->findOneBy(['name' => $cleanedInput]);
 
         if ($room) {
             assert($room instanceof Room);
             $data["description"] = $room->getInspect();
             error_log("Room found: " . $room->getName());
         }
-        $item = $itemsRepository->findOneBy(['name' => $cleanedInput]);
 
         if ($item) {
             assert($item instanceof Item);
@@ -145,8 +127,10 @@ class AdventureGameApiController extends AdventureGameController
             error_log("Item found: " . $item->getName());
         }
 
-        $data["description"] = "Object not found.";
-
+        if (!$room && !$item) {
+            $data["description"] = "Object not found.";
+            error_log("Object not found for input: " . $cleanedInput);
+        }
 
         $response = new JsonResponse($data);
         $response->setEncodingOptions(
@@ -168,7 +152,7 @@ class AdventureGameApiController extends AdventureGameController
         }
 
         assert($game instanceof Game);
-        $basket = $game->getBasket();
+        $basket = $game->basketItem();
 
         foreach ($basket as $item) {
             assert($item instanceof Item);
@@ -193,7 +177,7 @@ class AdventureGameApiController extends AdventureGameController
         if ($session->get("adventure")) {
             $game = $session->get("adventure");
             assert($game instanceof Game);
-            $data["roomsVisited"] = $game->getVisitedRooms();
+            $data["roomsVisited"] = $game->visitedRooms();
         }
 
         $response = new JsonResponse($data);
@@ -202,43 +186,4 @@ class AdventureGameApiController extends AdventureGameController
         );
         return $response;
     }
-
-    // #[Route('/proj/api/go', name: 'proj_go', methods: ['POST'])]
-    // public function move(Request $request, SessionInterface $session, RoomRepository $roomRepository, ItemRepository $itemRepository): JsonResponse
-    // {
-    //     $direction = (string) $request->request->get('direction');
-    //     $cleanedDirection = strtolower(trim($direction));
-
-    //     // $direction = $request->request->get('direction');
-    //     $game = $session->get('adventure');
-
-    //     if(!$game) {
-    //         return new JsonResponse(['message' => 'Game session not found.'], Response::HTTP_NOT_FOUND);
-    //     }
-
-    //     if (!$game->checkValidDirection($direction)) {
-    //         return new JsonResponse(['message' => 'Invalid direction.'], Response::HTTP_BAD_REQUEST);
-    //     }
-
-    //     $newRoomName = $game->getLocationOfDirection($direction);
-    //     $newRoom = $roomRepository->findOneBy(['name' => $newRoomName]);
-
-    //     if(!$newRoom) {
-    //         return new JsonResponse(['message' => 'New room not found.'], Response::HTTP_NOT_FOUND);
-    //     }
-
-    //     $items = $itemRepository->findBy(['room' => $newRoom]);
-    //     error_log("Items in the new room: " . json_encode($items));
-
-    //     $game->setRoomTo($newRoom, $items);
-    //     $session->set('adventure', $game);
-
-    //     return new JsonResponse([
-    //         'currentRoom' => $newRoom->getName(),
-    //         'description' => $newRoom->getInspect(),
-    //         'items' => array_map(function ($item) {
-    //             return $item->getName();
-    //         }, $items)
-    //     ]);
-    // }
 }

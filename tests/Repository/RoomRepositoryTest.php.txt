@@ -1,0 +1,62 @@
+<?php
+// tests/Repository/RoomRepositoryTest.php
+
+namespace App\Tests\Repository;
+
+use App\Entity\Room;
+use App\Repository\RoomRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\Mapping\ClassMetadata;
+use Doctrine\Persistence\ManagerRegistry;
+use PHPUnit\Framework\TestCase;
+
+class RoomRepositoryTest extends TestCase
+{
+    private \PHPUnit\Framework\MockObject\MockObject|EntityManagerInterface $entityManager;
+    private RoomRepository $roomRepository;
+
+    protected function setUp(): void
+    {
+        $this->entityManager = $this->createMock(EntityManagerInterface::class);
+
+        $classMetadata = new ClassMetadata(Room::class);
+        $this->entityManager->method('getClassMetadata')
+                            ->willReturn($classMetadata);
+
+        $registry = $this->createMock(ManagerRegistry::class);
+        $registry->method('getManagerForClass')
+                 ->willReturn($this->entityManager);
+        
+        $this->roomRepository = new RoomRepository($registry);
+    }
+
+    public function testSave(): void
+    {
+        $room = new Room();
+
+        $this->entityManager->expects($this->once())
+                            ->method('persist')
+                            ->with($this->equalTo($room));
+
+        $this->roomRepository->save($room);
+    }
+
+    public function testFlush(): void
+    {
+        $this->entityManager->expects($this->once())
+                            ->method('flush');
+
+        $this->roomRepository->flush();
+    }
+
+    public function testRemove(): void
+    {
+        $room = new Room();
+
+        $this->entityManager->expects($this->once())
+                            ->method('remove')
+                            ->with($this->equalTo($room));
+
+        $this->roomRepository->remove($room);
+    }
+}
