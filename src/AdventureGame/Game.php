@@ -140,7 +140,7 @@ class Game
      * This method returns an array of the possible directions.
      * @return string[]
      */
-    public function getAvailableDirections(): array
+    private function getAvailableDirections(): array
     {
         $directions = [];
 
@@ -162,17 +162,6 @@ class Game
 
         return $directions;
     }
-
-    // /**
-    //  * This method checks if the input is a valid direction.
-    //  * @param string $input
-    //  * @return bool
-    //  */
-    // public function checkValidDirection(string $input): bool
-    // {
-    //     $directions = $this->getAvailableDirections();
-    //     return in_array($input, $directions);
-    // }
 
     /**
      * This method returns the name of the place/room in the given direction.
@@ -239,13 +228,13 @@ class Game
      */
     public function inspectRoomOrItem(string $object)
     {
-        $result = "You cannot inspect '".$object."'. Try something else.";
+        $result = "Inspection of '".$object."' is not possible. Try something else.";
 
         if (empty($object)) {
             $result = "Please specify what you want to inspect. ";
             $result .= "For example, 'inspect ".$this->currentRoom->getName()."'";
         } elseif ($object == $this->currentRoom->getName()) {
-            $result = "You are looking around... ";
+            $result = "You scan the area... ";
             $result .= $this->currentRoom->getInspect();
         } elseif (in_array($object, $this->currentRoomItems())) {
             foreach ($this->currentItems as $item) {

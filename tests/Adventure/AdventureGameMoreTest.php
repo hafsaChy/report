@@ -109,35 +109,35 @@ class AdventureGameMoreTest extends TestCase
         $this->assertCount(2, $this->game->visitedRooms());
     }
 
-    /**
-     * Test method getAvailableDirections().
-     */
-    public function testGetAvailableDirections(): void
-    {
-        $directions = $this->game->getAvailableDirections();
+    // /**
+    //  * Test method getAvailableDirections().
+    //  */
+    // public function testGetAvailableDirections(): void
+    // {
+    //     $directions = $this->game->getAvailableDirections();
 
-        $this->assertIsArray($directions);
-        $this->assertCount(3, $directions);
-        $this->assertNotContains("east", $directions);
-        $this->assertContains("north", $directions);
+    //     $this->assertIsArray($directions);
+    //     $this->assertCount(3, $directions);
+    //     $this->assertNotContains("east", $directions);
+    //     $this->assertContains("north", $directions);
 
-        $newRoom = (new Room())
-            ->setName("school")
-            ->setDescription("a primary school")
-            ->setImage("school.jpg")
-            ->setNorth("park")
-            ->setEast("houses")
-            ->setSouth("shopping mall")
-            ->setWest("clinic")
-            ->setInspect("The school has many teaching materials")
-        ;
-        $this->game->setCurrentRoom($newRoom, [$this->item]);
-        $this->assertContains("east", $this->game->getAvailableDirections());
-    }
+    //     $newRoom = (new Room())
+    //         ->setName("school")
+    //         ->setDescription("a primary school")
+    //         ->setImage("school.jpg")
+    //         ->setNorth("park")
+    //         ->setEast("houses")
+    //         ->setSouth("shopping mall")
+    //         ->setWest("clinic")
+    //         ->setInspect("The school has many teaching materials")
+    //     ;
+    //     $this->game->setCurrentRoom($newRoom, [$this->item]);
+    //     $this->assertContains("east", $this->game->getAvailableDirections());
+    // }
 
     /**
      * Test method getDirectionsDescription().
-     */ 
+     */
     public function testGetDirectionsDescription(): void
     {
         $this->game->setCurrentRoom(
